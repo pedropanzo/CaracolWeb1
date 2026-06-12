@@ -111,6 +111,7 @@ const Sidebar = () => {
                 { name: "Imp. Histórico de classes", path: "/Imp-historico-classes" },
                 { name: "Imp. Historico de custos de serviços", path:"/Imp-historico-custos"}, 
                 { name: "Imp. Historico de turmas criadas", path:"/Imp-historico-de-turmas-criadas"},
+                 { name: "Imp. Excessoes de pagamento", path:"/Imp-excessoes-de-pagamento"},
             ]
         },
         {

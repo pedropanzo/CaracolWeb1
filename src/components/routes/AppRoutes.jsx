@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
-import AuthLayout from '../Layout/AuthLayout';     
+import AuthLayout from '../Layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
@@ -27,7 +27,7 @@ import NotFound from '../pages/notFound/NotFound';
 import Register from '../pages/auth/register';
 import Classes from '../pages/classes/Classes';
 import Disciplina from '../pages/disciplina/DisciplinesPage';
-import ServiceCostPage from '../pages/service-cost/ServiceCostPage'; 
+import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Grades from "../pages/grades/Grades";
 import Banks from "../pages/banks/Banks";
 import GradesEntry from "../pages/grades/GradesEntry";
@@ -46,6 +46,7 @@ import EmployeesPrint from '../pages/reports/employee/EmployeesPrint';
 import ClassHistoryReport from '../pages/reports/class/ClassHistoryReport';
 import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 import TurmasReportPage from "../pages/reports/TurmasReportPage";
+import ExcessoesPage from "../pages/reports/ExcessoesPage";
 
 
 export default function AppRoutes() {
@@ -57,10 +58,10 @@ export default function AppRoutes() {
         <Route path="/register" element={<Register />} />
       </Route>
 
-             
+
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
-          <Route path="/" element={<Dashboard />} />          
+          <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard/dashboard1" element={<Dashboard1 />} />
           <Route path="/dashboard/dashboard2" element={<Dashboard2 />} />
 
@@ -68,8 +69,8 @@ export default function AppRoutes() {
 
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
-          <Route path="/alunos/confirmacao" element={<StudentConfirm />} /> 
-          <Route path="/alunos/index" element={<StudentsAcademico />} /> 
+          <Route path="/alunos/confirmacao" element={<StudentConfirm />} />
+          <Route path="/alunos/index" element={<StudentsAcademico />} />
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
           <Route path='/alunos/suspensao' element={<SuspensionPage />} />
@@ -92,13 +93,15 @@ export default function AppRoutes() {
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
-          <Route path="/transicaodeclasse" element={<StudentStatus/>} />
-          <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
-          <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent/>} />
-          <Route path="/Imp-professores" element={<TeachersReport/>} />
-          <Route path="/Imp-historico-custos" element={<ServiceCostHistoryPage/>} />
-          <Route path="/Imp-historico-de-turmas-criadas" element={<TurmasReportPage/> } />
-      
+          <Route path="/transicaodeclasse" element={<StudentStatus />} />
+          <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents />} />
+          <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent />} />
+          <Route path="/Imp-professores" element={<TeachersReport />} />
+          <Route path="/Imp-historico-custos" element={<ServiceCostHistoryPage />} />
+          <Route path="/Imp-historico-de-turmas-criadas" element={<TurmasReportPage />} />
+          <Route path="/Imp-excessoes-de-pagamento" element={<ExcessoesPage />} />
+
+
         </Route>
       </Route>
 
