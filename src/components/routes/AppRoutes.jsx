@@ -8,6 +8,8 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import Dashboard1 from '../pages/dashboard/Dashboard1';
 import Dashboard2 from '../pages/dashboard/Dashboard2';
 
+import Message from '../pages/message/Message';
+
 import StudentList from '../pages/students/StudentsList';
 import StudentForm from '../pages/students/StudentForm';
 import StudentsAcademico from '../pages/students/StudentsAcademico';
@@ -61,6 +63,8 @@ export default function AppRoutes() {
           <Route path="/" element={<Dashboard />} />          
           <Route path="/dashboard/dashboard1" element={<Dashboard1 />} />
           <Route path="/dashboard/dashboard2" element={<Dashboard2 />} />
+
+          <Route path="/message/Message" element={<Message />} />
 
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />

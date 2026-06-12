@@ -30,7 +30,7 @@ const Sidebar = () => {
                 { name: "Dashboard 2", path: "/dashboard/dashboard2" },                
             ],
         },
-        { icon: iconsms, name: "SMS | Email", path: "/mensagem" },
+        { icon: iconsms, name: "SMS | Email", path: "/message/Message" },
         {
             icon: iconStud,
             name: "Aluno",
