@@ -1,53 +1,58 @@
 import { useState } from "react";
 
-export default function SuspensionTable(){
+export default function SuspensionTable() {
 
-const [selected,setSelected] = useState(null)
+    const [selected, setSelected] = useState(null)
 
-const students = [
-{ id:1, name:"Carlos Tunga Cangala"},
-{ id:3, name:"Domingas Cassinda Mariano"},
-{ id:5, name:"Érica Maria Melo Beianavi"},
-{ id:6, name:"Eliane Maria Fernando Vicente"}
-]
+    const students = [
+        { id: 1, name: "Carlos Tunga Cangala" },
+        { id: 3, name: "Domingas Cassinda Mariano" },
+        { id: 5, name: "Érica Maria Melo Beianavi" },
+        { id: 6, name: "Eliane Maria Fernando Vicente" }
+    ]
 
-return(
+    return (
+        <div className="row">
+            <div className="col-lg-12">
+                <div className="ibox float-e-margins">
+                    <div className="ibox-content"></div>
+                    <div className="table-responsive">
+                        <table className="table table-hover dataTables-example">
+                            <thead className="table-light">
 
-<div className="table-responsive">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                </tr>
 
-<table className="table table-bordered table-hover">
+                            </thead>
 
-<thead className="table-primary text-center">
+                            <tbody>
 
-<tr>
-<th>ID</th>
-<th>Nome</th>
-</tr>
+                                {students.map(s => (
+                                    <tr
+                                        key={s.id}
+                                        onClick={() => setSelected(s.id)}
+                                        className={selected === s.id ? "table-primary text-white" : ""}
+                                        style={{ cursor: "pointer" }}
+                                    >
 
-</thead>
+                                        <td>{s.id}</td>
+                                        <td>{s.name}</td>
 
-<tbody>
+                                    </tr>
+                                ))}
 
-{students.map(s=>(
-<tr
-key={s.id}
-onClick={()=>setSelected(s.id)}
-className={selected === s.id ? "table-primary text-white" : ""}
-style={{cursor:"pointer"}}
->
+                            </tbody>
 
-<td>{s.id}</td>
-<td>{s.name}</td>
+                        </table>
 
-</tr>
-))}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</tbody>
 
-</table>
-
-</div>
-
-)
+    )
 
 }

@@ -12,10 +12,8 @@ export default function StudentDropOut() {
 
     return (
         <PageBase title="Alunos activos e Desistentes">
-            <div className='container mt-4'>                
-                <StudentSearch search={search} setSearch={setSearch} />
-                <StudentTable student={desistentes} />
-            </div>
+            <StudentSearch search={search} setSearch={setSearch} />
+            <StudentTable student={desistentes} />
         </PageBase>
     )
 }
