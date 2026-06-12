@@ -4,25 +4,28 @@ import StudentConfirmForm from "../../Student/StudentConfirmForm"
 
 import {
     studentInfo, history, courses, classes, turmas
-}   from "./mockStudent"
+} from "./mockStudent"
+import PageBase from "../../Layout/PageBase/PageBase"
 
-export default function StudentConfirm(){
+export default function StudentConfirm() {
     return (
-        <div className="container mt-4">
-            <h3 className="text-center mb-4">Confirmação</h3>
-            <div className="row">
-                <div className="col-md-5">
-                    <StudentInfo student={studentInfo} />
-                    <AcademicHistory history={history} />
-                </div>
-                <div className="col-md-7">
-                    <StudentConfirmForm
-                    courses={courses}
-                    classes={classes}
-                    turmas={turmas}
-                    />
+        <PageBase title="Confirmação">
+
+            <div className="container mt-4">
+                <div className="row">
+                    <div className="col-md-5">
+                        <StudentInfo student={studentInfo} />
+                        <AcademicHistory history={history} />
+                    </div>
+                    <div className="col-md-7">
+                        <StudentConfirmForm
+                            courses={courses}
+                            classes={classes}
+                            turmas={turmas}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </PageBase>
     )
 }
