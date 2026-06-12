@@ -27,8 +27,7 @@ const Sidebar = () => {
             submenu: [
                 { name: "Home", path: "/Dashboard/Dashboard" },
                 { name: "Dashboard 1", path: "/Dashboard/Dashboard1" },
-                { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },
-                { name: "Dashboard 3", path: "/Dashboard/Dashboard3" },
+                { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },                
             ],
         },
         { icon: iconsms, name: "SMS | Email", path: "/mensagem" },

@@ -82,7 +82,7 @@ export default function Payment() {
     
     <PageBase title="Pagamentos">
       <style>{styles}</style>
-      <div className="container-fluid" style={{ maxWidth:1150, padding:"14px 10px" }}>
+      <div className="container-fluid" style={{  }}>
 
         {/* Título */}
          
@@ -93,7 +93,41 @@ export default function Payment() {
             <div className="row">
 
               {/* Dados Pessoais */}
-              <div className="col-xs-12 col-sm-4">
+              <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Default Panel
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            Primary Panel
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">
+                                            Success Panel
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+              <div className="col-xs-12 col-sm-6">
                 <div className="section-box">
                   <div className="section-header">Dados Pessoais/Académicos</div>
                   {[
@@ -114,7 +148,7 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Mensalidades</div>
-                  <div style={{padding:4}}>                    
+                  <div>                    
                     <div className="scrollable">
                       {MENSALIDADES.map(m => (
                         <div key={m} className={`list-item ${mensalSel===m?"active":""}`} onClick={()=>setMensalSel(m)}>{m}</div>
@@ -143,7 +177,7 @@ export default function Payment() {
             <div className="fato-box">
               <b>Fato Completo</b>
               <div style={{display:"flex",gap:20,marginTop:6,flexWrap:"wrap",alignItems:"center"}}>
-                <span>Custo: <b>R$ 17.000,00</b></span>
+                <span>Custo: <b>17.000,00 kz</b></span>
                 <span>ISE-0,00(%)</span>
                 <span>Stock: 21</span>
                 <input type="number" defaultValue="1" className="form-control form-control-sm" style={{width:55,display:"inline-block"}}/>
@@ -237,7 +271,7 @@ export default function Payment() {
 
               <div className="total-bar">
                 <span className="total-label">Total à pagar</span>
-                <span className="total-val">R$ {fmt(total)}</span>
+                <span className="total-val"> {fmt(total)} kz</span>
               </div>
 
               {/* Forma de Pagamento */}
