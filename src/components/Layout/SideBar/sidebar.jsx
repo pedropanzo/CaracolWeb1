@@ -35,7 +35,7 @@ const Sidebar = () => {
             icon: iconStud,
             name: "Aluno",
             submenu: [
-                { name: "Inscrição", path: "/alunos/novo" },
+                { name: "Inscrição", path: "/alunos/novo", func: "abrirInscricao: true" },
                 { name: "Confirmação", path: "/alunos/confirmacao" },
                 { name: "Dados Academicos", path: "/alunos/index" },
                 { name: "Dados Pessoais", path: "/alunos/dados-pessoal" },
@@ -168,7 +168,7 @@ const Sidebar = () => {
                                     <ul className="nav nav-second-level collapse">
                                         {item.submenu.map((sub) => (
                                             <li key={sub.path}>
-                                                <Link to={sub.path}>{sub.name} </Link>
+                                                <Link to={sub.path} state={sub.func}>{sub.name} </Link>
                                             </li>
                                         ))}
                                     </ul>

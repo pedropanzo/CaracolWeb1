@@ -44,15 +44,10 @@ export default function SuspensionTable() {
                                 ))}
 
                             </tbody>
-
                         </table>
-
                     </div>
                 </div>
             </div>
         </div>
-
-
     )
-
 }

@@ -48,9 +48,13 @@ import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 import TurmasReportPage from "../pages/reports/TurmasReportPage";
 import ExcessoesPage from "../pages/reports/ExcessoesPage";
 
+import  InscricaoAlunoModal  from "../pages/students/InscricaoAlunoModal";
 
 export default function AppRoutes() {
-  return (
+  
+  
+  return (  
+
     <Routes>
 
       <Route element={<AuthLayout />}>
@@ -68,6 +72,9 @@ export default function AppRoutes() {
           <Route path="/message/Message" element={<Message />} />
 
           <Route path="/alunos" element={<StudentList />} />
+
+          {/*<Route path="/alunos/novo" element={<InscricaoAlunoModal />} />*/}
+
           <Route path="/alunos/novo" element={<StudentForm />} />
           <Route path="/alunos/confirmacao" element={<StudentConfirm />} />
           <Route path="/alunos/index" element={<StudentsAcademico />} />

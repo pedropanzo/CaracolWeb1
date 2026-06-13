@@ -1,39 +1,30 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { useLocation } from "react-router-dom";
 import Stepper from '../../ui/Stepper'
 import StudentStap1 from '../../forms/StudentStep1'
 import StudentStap2 from '../../forms/StudentStep2'
 import StudentStap3 from '../../forms/StudentStep3'
 import PageBase from '../../Layout/PageBase/PageBase'
 
+import  InscricaoAlunoModal  from "./InscricaoAlunoModal";
+
 export default function StudentForm() {
-  const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState({})
-
-    function next() {
-        setStep(prev => prev + 1)
-    }
+ 
+    const location = useLocation();
     
-    function prev() {
-        setStep(prev => prev - 1)
-    }
-    function updateField(name, value){
-        setFormData(prev => ({...prev, [name]: value}))
-    }
-  
-    return(
-        <PageBase title="Aluno Novo">
-            <p>Suspenso até o ajuste</p>
 
-        {/* <div className="card shadow-sm">
-            <div className="card-body">
-                <Stepper step={step} />
-                {step === 1 && <StudentStap1 data={formData} updateField={updateField} next={next} />}
-                {step === 2 && <StudentStap2 data={formData} updateField={updateField} next={next} prev={prev} />}
-                {step === 3 && <StudentStap3 data={formData} updateField={updateField} prev={prev} />}
-            </div>
-        </div>
-        */}
+   const [aberto, setAberto] = useState(
+    () => location.state?.abrirInscricao == true
+  );
 
-        </PageBase>
+
+    return (        
+        < div >
+        <InscricaoAlunoModal
+            isOpen={aberto}
+            onClose={() => setAberto(false)}
+            onFinalSubmit={(dados) => console.log(dados)}
+        />
+        </div >       
     )
 }
