@@ -5,9 +5,9 @@ import iconSmall from "./../../../assets/img/svg/inscription/Classroom.svg";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const provincias = [
-  "Bengo","Benguela","Bié","Cabinda","Cuando Cubango","Cuanza Norte",
-  "Cuanza Sul","Cunene","Huambo","Huíla","Luanda","Lunda Norte",
-  "Lunda Sul","Malanje","Moxico","Namibe","Uíge","Zaire"
+  "Bengo", "Benguela", "Bié", "Cabinda", "Cuando Cubango", "Cuanza Norte",
+  "Cuanza Sul", "Cunene", "Huambo", "Huíla", "Luanda", "Lunda Norte",
+  "Lunda Sul", "Malanje", "Moxico", "Namibe", "Uíge", "Zaire"
 ];
 
 const cursosData = [
@@ -17,13 +17,13 @@ const cursosData = [
   { id: "cont", nome: "Contabilidade" },
 ];
 
-const classesData = ["1ª Classe","2ª Classe","3ª Classe","4ª Classe","5ª Classe","6ª Classe"];
+const classesData = ["1ª Classe", "2ª Classe", "3ª Classe", "4ª Classe", "5ª Classe", "6ª Classe"];
 
 const turmasData = [
   { id: "1MA", label: "1M/A", periodo: "Manhã", capacidade: 45, matriculados: 30 },
-  { id: "1MT", label: "1M/T", periodo: "Tarde",  capacidade: 40, matriculados: 22 },
+  { id: "1MT", label: "1M/T", periodo: "Tarde", capacidade: 40, matriculados: 22 },
   { id: "2MA", label: "2M/A", periodo: "Manhã", capacidade: 45, matriculados: 38 },
-  { id: "2MT", label: "2M/T", periodo: "Tarde",  capacidade: 40, matriculados: 15 },
+  { id: "2MT", label: "2M/T", periodo: "Tarde", capacidade: 40, matriculados: 15 },
 ];
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
@@ -35,7 +35,7 @@ const styles = `
   .insc-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     display: flex;
@@ -102,14 +102,14 @@ const styles = `
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
   .insc-step {
     width: 28px; height: 28px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Outfit', sans-serif;
-    font-size: 0.78rem;
+    font-size: 10px;
     font-weight: 700;
     transition: all 0.3s;
   }
@@ -119,22 +119,19 @@ const styles = `
   .insc-step-line { flex: 1; height: 2px; background: #d0daea; border-radius: 2px; }
   .insc-step-line-done { background: #43a047; }
 
-  .insc-section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.13em;
+  .insc-section-title {   
+    font-weight: 600;    
     text-transform: uppercase;
-    color: #007AF0;
-    text-align: center;
-    margin-bottom: 24px;
+    color: #171718;
+    text-align: center;    
+    margin-bottom: 10px;
     position: relative;
   }
   .insc-section-title::before, .insc-section-title::after {
     content: '';
     position: absolute;
-    top: 50%;
-    width: 25%;
+    top: 50%;    
+    width: 30%;
     height: 1px;
     background: #d0daea;
   }
@@ -144,7 +141,7 @@ const styles = `
   .insc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
   .insc-field { display: flex; flex-direction: column; gap: 6px; }
   .insc-field-full { grid-column: 1 / -1; }
-  .insc-label { font-size: 0.78rem; font-weight: 500; color: #6b7a99; letter-spacing: 0.03em; }
+  .insc-label { font-size: 15px; font-weight: 500; color: #6b7a99; letter-spacing: 0.03em; }
 
   .insc-input, .insc-select {
     background: #ffffff;
@@ -152,7 +149,7 @@ const styles = `
     border-radius: 8px;
     padding: 10px 13px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.93rem;
+    
     color: #1a2340;
     outline: none;
     transition: border-color 0.18s, box-shadow 0.18s;
@@ -183,7 +180,7 @@ const styles = `
   .insc-radio-group { display: flex; gap: 20px; align-items: center; padding: 2px 0; }
   .insc-radio-label {
     display: flex; align-items: center; gap: 7px;
-    font-size: 0.93rem; color: #1a2340; cursor: pointer; font-weight: 400;
+    color: #1a2340; cursor: pointer; font-weight: 400;
   }
   .insc-divider { grid-column: 1 / -1; height: 1px; background: #d0daea; margin: 4px 0; }
   .insc-doc-box {
@@ -203,8 +200,7 @@ const styles = `
     border: none;
     border-radius: 10px;
     padding: 14px 28px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.05rem;
+    font-family: 'Outfit', sans-serif;    
     font-weight: 600;
     letter-spacing: 0.04em;
     cursor: pointer;
@@ -225,7 +221,7 @@ const styles = `
   /* Step 2 – academic layout */
   .acad-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 4px; }
   .acad-fields { display: flex; flex-direction: column; gap: 16px; }
-  .acad-info-txt { font-size: 0.82rem; color: #6b7a99; margin-top: 4px; line-height: 1.5; }
+  .acad-info-txt { color: #6b7a99;  line-height: 1.5; }
 
   /* Preview card */
   .acad-preview {
@@ -249,7 +245,7 @@ const styles = `
     text-transform: uppercase;
   }
   .acad-preview-val {
-    font-size: 0.9rem; color: #1a2340; text-align: center; line-height: 1.7;
+    color: #1a2340; text-align: center; line-height: 1.7;
   }
   .acad-preview-val strong { font-weight: 600; }
   .acad-preview-alunos {
@@ -262,8 +258,7 @@ const styles = `
     background: #007AF0;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    border: none; cursor: pointer;
-    margin-top: 8px;
+    border: none; cursor: pointer;     
     transition: background 0.2s, transform 0.15s;
     box-shadow: 0 4px 14px rgba(21,101,192,0.25);
     align-self: flex-start;
@@ -277,23 +272,20 @@ const styles = `
     border: none;
     border-radius: 10px;
     padding: 13px 24px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem; font-weight: 600;
+    font-family: 'Outfit', sans-serif;    
     cursor: pointer;
     display: flex; align-items: center; justify-content: center; gap: 8px;
     width: 100%;
     margin-top: 4px;
     transition: background 0.2s, transform 0.14s, box-shadow 0.18s;
-    box-shadow: 0 4px 14px rgba(21,101,192,0.22);
+    box-shadow: 0 4px 14px #;
   }
   .acad-matricular-btn:hover { background: #1976D2; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(21,101,192,0.28); }
 
   .acad-voltar {
     background: none;
     border: none;
-    color: #6b7a99;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.93rem;
+    color: #6b7a99;    
     cursor: pointer;
     text-align: center;
     width: 100%;
@@ -313,18 +305,18 @@ const styles = `
   }
 `;
 
-// ─── Step 1: Dados Pessoal ────────────────────────────────────────────────────
+// ─── Step 1: Dados Pessoal ───────────────────────────────────
 function StepDadosPessoal({ data, onChange, onNext }) {
   const set = (field) => (e) => onChange({ ...data, [field]: e.target.value });
 
   return (
     <>
-      <div className="insc-section-title">Dados Pessoal</div>
+      <div className="insc-section-title"> Dados Pessoal</div>
       <div className="insc-grid">
 
         <div className="insc-field">
-          <label className="insc-label">Processo nº</label>
-          <input className="insc-input" type="text" value={data.processo} onChange={set("processo")} placeholder="853" />
+          <label className="insc-label">.</label>
+          <input className="insc-input" type="text" value={data.processo} onChange={set("processo")} placeholder="Processo nº 853" readOnly/>
         </div>
 
         <div className="insc-field">
@@ -426,7 +418,7 @@ function StepDadosPessoal({ data, onChange, onNext }) {
                   </div>
                 </div>
                 <div className="insc-field">
-                  <label className="insc-label">Emitido Aos</label>
+                  <label className="insc-label">Emitido aos</label>
                   <input className="insc-input" type="date" value={data.emitidoAos} onChange={set("emitidoAos")} />
                 </div>
               </div>
@@ -445,9 +437,7 @@ function StepDadosPessoal({ data, onChange, onNext }) {
           <label className="insc-label">NIF do encarregado</label>
           <div className="insc-select-wrap">
             <select className="insc-select insc-select-blue" value={data.nif} onChange={set("nif")}>
-              <option value="">Selecionar</option>
-              <option>Contribuinte</option>
-              <option>Não contribuinte</option>
+              <option>Consumidor Final</option>
             </select>
           </div>
         </div>
@@ -459,7 +449,7 @@ function StepDadosPessoal({ data, onChange, onNext }) {
 
         <button className="insc-btn" onClick={onNext}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
           </svg>
           Seguinte
         </button>
@@ -516,28 +506,29 @@ function StepDadosAcademico({ data, onChange, onBack, onMatricular }) {
             </p>
           )}
 
-          <button className="acad-check-btn" onClick={onMatricular} title="Confirmar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            </svg>
-          </button>
+          <center>
+            <button className="acad-check-btn" onClick={onMatricular} title="Confirmar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+              </svg>
+            </button>
+          </center>
         </div>
 
         {/* Right: preview card */}
         <div>
           <div className="acad-preview">
-            <center> <img style={{ width: '110px', height: '110px' }} src={iconSmall} /> </center> 
+            <center> <img style={{ width: '110px', height: '110px' }} src={iconSmall} /> </center>
             <div className="acad-preview-curso">Curso</div>
-            <div style={{ fontSize: "0.95rem", color: "#1a2340", textAlign: "center" }}>{cursoNome}</div>
+            <div style={{  color: "#1a2340", textAlign: "center" }}>{cursoNome}</div>
             {turma ? (
               <div className="acad-preview-val">
                 <strong>Classe:</strong><br />
                 {data.classe}<br />
                 <strong>Turma:</strong> {turma.label}<br />
                 <strong>Período:</strong> {turma.periodo}<br />
-                <em>Tem:</em><br />
-                {turma.matriculados}<br />
-                Alunos matriculados.
+                <strong>{turma.matriculados}</strong> Alunos matriculados.
+                
               </div>
             ) : (
               <div className="acad-preview-val" style={{ color: "#aaa" }}>Selecione uma turma</div>
@@ -546,7 +537,7 @@ function StepDadosAcademico({ data, onChange, onBack, onMatricular }) {
 
           <button className="acad-matricular-btn" style={{ marginTop: 12 }} onClick={onMatricular}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
             </svg>
             Matricular
           </button>
@@ -558,7 +549,7 @@ function StepDadosAcademico({ data, onChange, onBack, onMatricular }) {
   );
 }
 
-// ─── Modal de Inscrição ───────────────────────────────────────────────────────
+// ─── Modal de Inscrição ────────────────────────────────────────
 function InscricaoAlunoModal({ isOpen, onClose, onFinalSubmit }) {
   const [step, setStep] = useState(1);
 
@@ -602,7 +593,7 @@ function InscricaoAlunoModal({ isOpen, onClose, onFinalSubmit }) {
           <span className="insc-title">Inscrição</span>
           <button className="insc-icon-btn" title="Fechar" onClick={handleClose}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
             </svg>
           </button>
         </div>
@@ -642,21 +633,21 @@ export default function App() {
 
   // ─── Mudei o status para abrir o modal ao caregar o formulário
   const [modalAberto, setModalAberto] = useState(true);
-    
-  return (    
+
+  return (
     <>
       <style>{styles}</style>
 
       {/* Botão de abertura */}
       <center>
         <button
-        className="btn btn-primary"
-        onClick={() => setModalAberto(true)}
-      >         
-        Nova Inscrição
-      </button>
+          className="btn btn-primary"
+          onClick={() => setModalAberto(true)}
+        >
+          Nova Inscrição
+        </button>
       </center>
-      
+
 
       {/* Modal */}
       <InscricaoAlunoModal
