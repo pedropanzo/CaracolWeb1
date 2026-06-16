@@ -8,7 +8,7 @@ const TotalCard = () => {
       style={{
         display: "flex",
         alignItems: "center",
-        background: "#f8f9fa",
+        background: "#ffffff",
         padding: "10px 20px",
         borderRadius: "20px",
         gap: "10px",
@@ -30,8 +30,8 @@ const TotalCard = () => {
       </div>
 
       <div>
-        <div style={{ fontSize: "12px" }}>TOTAL</div>
-        <div style={{ fontWeight: "bold", color: "#0d6efd" }}>70</div>
+        <div style={{ fontSize: "12px" }}>TOTAL GERAL</div>
+        <div style={{ fontWeight: "bold", color: "#0d6efd", textAlign: "right" }}>70</div>
       </div>
     </div>
   );

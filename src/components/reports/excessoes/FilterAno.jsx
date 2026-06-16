@@ -11,6 +11,7 @@ const FilterAno = () => {
     >
       <div style={{ fontSize: "12px" }}>Ano lectivo</div>
       <select className="form-select form-select-sm">
+        <option>2024/2025</option>
         <option>2025/2026</option>
       </select>
     </div>

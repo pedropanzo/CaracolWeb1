@@ -6,10 +6,10 @@ const HeaderExcessoes = () => {
   return (
     <div>
       {/* TOPO */}
-      <div style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "15px", }}>        
+      <div style={{ background: "#0d6efd", display: "flex", alignItems: "center", gap: "20px",  }}>        
         <FilterAno />
         <button  className="btn btn-default" > RELATÓRIO </button>                
-        <TotalCard />
+        <TotalCard />        
       </div>
     </div>
   );

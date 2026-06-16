@@ -7,8 +7,9 @@ import PageBase from "../../Layout/PageBase/PageBase";
 const ExcessoesPagamentoPage = () => {
   return (
     <PageBase title=" Alunos com excessões de pagamento" >
-    <div style={{ padding: "20px" }}>
-      <HeaderExcessoes />
+
+     
+      <HeaderExcessoes />      
 
       <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
         <div style={{ flex: 3 }}>
@@ -19,7 +20,7 @@ const ExcessoesPagamentoPage = () => {
           <ServicosTable />
         </div>
       </div>
-    </div>
+     
     </PageBase>
   );
 };
