@@ -69,7 +69,7 @@ const LockScreen = () => {
                         </div>
                         <h3>{user?.name}</h3>
                         <p> ---</p>
-                        <form className="m-t" role="form" action="index.html">
+                        <form className="m-t" role="form" action="">
                             <div className="form-group">
                                 <input type="password" className="form-control" placeholder="******" required="" />
                             </div>
