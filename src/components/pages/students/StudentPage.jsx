@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { student as data } from './mockStudent'
-import StudentSearch from '../../Student/StudentSearch'
-import StudentStats from '../../Student/StudentStats'
-import StudentTable from '../../Student/StudentTable'
-import PageBase from '../../Layout/PageBase/PageBase'
+import StudentSearch from '../../student/StudentSearch'
+import StudentStats from '../../student/StudentStats'
+import StudentTable from '../../student/StudentTable'
+import PageBase from '../../layout/PageBase/PageBase'
 
 export default function StudentPage() {
     const [search, setSearch] = useState("")
@@ -12,7 +12,7 @@ export default function StudentPage() {
         s.name.toLowerCase().includes(search.toLowerCase())
     )
     return (
-        <PageBase title="Dados Geral" subtitle="Dos alunos">  
+        <PageBase title="Dados Geral" subtitle="Dos alunos">
             <StudentSearch search={search} setSearch={setSearch} />
             <StudentStats student={filtered} />
             <StudentTable student={filtered} />

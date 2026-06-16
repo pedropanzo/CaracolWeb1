@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 
 // Bootstrap 3 CDN deve ser adicionado no index.html:
 // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.4.1/css/bootstrap.min.css"/>
@@ -44,14 +44,14 @@ const styles = `
 `;
 
 const ALUNOS = [
-  { id:1, nome:"Aldair Dala Gunza", sexo:"Masculino", contacto:"946127123/929211010", encarregado:"Francisco Gunza" },
-  { id:2, nome:"Amado Josué Mateus Ezequiel", sexo:"Masculino", contacto:"923974929", encarregado:"Alirio Marinho Ezequiel" },
-  { id:3, nome:"Anabela Eliandra Tavares Kizua", sexo:"Feminino", contacto:"923490075", encarregado:"Alfredo Emilio Ernesto Kizua" },
-  { id:4, nome:"Andreia Mariela Luvualo André", sexo:"Feminino", contacto:"926871288", encarregado:"Thierry Dilson André" },
+  { id: 1, nome: "Aldair Dala Gunza", sexo: "Masculino", contacto: "946127123/929211010", encarregado: "Francisco Gunza" },
+  { id: 2, nome: "Amado Josué Mateus Ezequiel", sexo: "Masculino", contacto: "923974929", encarregado: "Alirio Marinho Ezequiel" },
+  { id: 3, nome: "Anabela Eliandra Tavares Kizua", sexo: "Feminino", contacto: "923490075", encarregado: "Alfredo Emilio Ernesto Kizua" },
+  { id: 4, nome: "Andreia Mariela Luvualo André", sexo: "Feminino", contacto: "926871288", encarregado: "Thierry Dilson André" },
 ];
-const MENSALIDADES = ["Setembro","Outubro","Novembro","Dezembro","Janeiro","Fevereiro","Março","Abril","Maio","Junho"];
-const OUTROS = ["Confirmação","Prova 1º trimestre","PASSEIO AO CFL","Multa","Matrícula","Seguro Escolar"];
-const SERVICOS = ["Folha de prova","Transporte Sequele","Matrícula Transporte","Fato Completo","Multa Transporte"];
+const MENSALIDADES = ["Setembro", "Outubro", "Novembro", "Dezembro", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
+const OUTROS = ["Confirmação", "Prova 1º trimestre", "PASSEIO AO CFL", "Multa", "Matrícula", "Seguro Escolar"];
+const SERVICOS = ["Folha de prova", "Transporte Sequele", "Matrícula Transporte", "Fato Completo", "Multa Transporte"];
 
 export default function Payment() {
   const [alunoSel, setAlunoSel] = useState(ALUNOS[1]);
@@ -59,7 +59,7 @@ export default function Payment() {
   const [mensalSel, setMensalSel] = useState("Setembro");
   const [outroSel, setOutroSel] = useState("Confirmação");
   const [pedidos, setPedidos] = useState([
-    { natureza:"Fato Completo", referente:"Uniforme/Fatc", preco:17000, qtd:1 },
+    { natureza: "Fato Completo", referente: "Uniforme/Fatc", preco: 17000, qtd: 1 },
   ]);
   const [formaPag, setFormaPag] = useState("Banco");
   const [banco, setBanco] = useState("BIC PROPIN");
@@ -79,54 +79,54 @@ export default function Payment() {
 
   return (
     <>
-    
-    <PageBase title="Pagamentos">
-      <style>{styles}</style>
-      <div className="container-fluid" style={{  }}>
 
-        {/* Título */}
-         
+      <PageBase title="Pagamentos">
+        <style>{styles}</style>
+        <div className="container-fluid" style={{}}>
 
-         
+          {/* Título */}
+
+
+
           {/* ===== COLUNA ESQUERDA ===== */}
           <div className="col-xs-12 col-md-8">
             <div className="row">
 
               {/* Dados Pessoais */}
               <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            Default Panel
-                                        </div>
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                                        </div>
+                <div class="col-lg-6">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      Default Panel
+                    </div>
+                    <div class="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    </div>
 
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="panel panel-primary">
-                                        <div class="panel-heading">
-                                            Primary Panel
-                                        </div>
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="panel panel-success">
-                                        <div class="panel-heading">
-                                            Success Panel
-                                        </div>
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      Primary Panel
+                    </div>
+                    <div class="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      Success Panel
+                    </div>
+                    <div class="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
               <div className="col-xs-12 col-sm-6">
                 <div className="section-box">
                   <div className="section-header">Dados Pessoais/Académicos</div>
@@ -138,7 +138,7 @@ export default function Payment() {
                     ["Ano:", anoLectivo],
                   ].map(([l, v]) => (
                     <div className="info-row" key={l}>
-                      <b>{l}</b><span style={{fontSize:11}}>{v}</span>
+                      <b>{l}</b><span style={{ fontSize: 11 }}>{v}</span>
                     </div>
                   ))}
                 </div>
@@ -148,10 +148,10 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Mensalidades</div>
-                  <div>                    
+                  <div>
                     <div className="scrollable">
                       {MENSALIDADES.map(m => (
-                        <div key={m} className={`list-item ${mensalSel===m?"active":""}`} onClick={()=>setMensalSel(m)}>{m}</div>
+                        <div key={m} className={`list-item ${mensalSel === m ? "active" : ""}`} onClick={() => setMensalSel(m)}>{m}</div>
                       ))}
                     </div>
                   </div>
@@ -162,10 +162,10 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Outros Pagamentos</div>
-                  <div style={{padding:4}}>                    
+                  <div style={{ padding: 4 }}>
                     <div className="scrollable">
                       {OUTROS.map(o => (
-                        <div key={o} className={`list-item ${outroSel===o?"active":""}`} onClick={()=>setOutroSel(o)}>{o}</div>
+                        <div key={o} className={`list-item ${outroSel === o ? "active" : ""}`} onClick={() => setOutroSel(o)}>{o}</div>
                       ))}
                     </div>
                   </div>
@@ -176,16 +176,16 @@ export default function Payment() {
             {/* Fato Completo */}
             <div className="fato-box">
               <b>Fato Completo</b>
-              <div style={{display:"flex",gap:20,marginTop:6,flexWrap:"wrap",alignItems:"center"}}>
+              <div style={{ display: "flex", gap: 20, marginTop: 6, flexWrap: "wrap", alignItems: "center" }}>
                 <span>Custo: <b>17.000,00 kz</b></span>
                 <span>ISE-0,00(%)</span>
                 <span>Stock: 21</span>
-                <input type="number" defaultValue="1" className="form-control form-control-sm" style={{width:55,display:"inline-block"}}/>
+                <input type="number" defaultValue="1" className="form-control form-control-sm" style={{ width: 55, display: "inline-block" }} />
               </div>
-              <div style={{marginTop:8,display:"flex",alignItems:"center",gap:12}}>
-                <span style={{fontWeight:600}}>Referente</span>
+              <div style={{ marginTop: 8, display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ fontWeight: 600 }}>Referente</span>
                 <span className="ref-badge">Uniforme/Fato ▾</span>
-                <button style={{background:"none",border:"none",color:"#2196F3",fontSize:20,cursor:"pointer",fontWeight:700}}>✓</button>
+                <button style={{ background: "none", border: "none", color: "#2196F3", fontSize: 20, cursor: "pointer", fontWeight: 700 }}>✓</button>
               </div>
             </div>
 
@@ -193,28 +193,28 @@ export default function Payment() {
             <div className="section-box">
               <div className="section-header">
                 <span>Serviços</span>
-                <span style={{fontSize:18,cursor:"pointer"}}>⚙</span>
+                <span style={{ fontSize: 18, cursor: "pointer" }}>⚙</span>
               </div>
-              <div style={{padding:8,display:"flex",flexWrap:"wrap"}}>
+              <div style={{ padding: 8, display: "flex", flexWrap: "wrap" }}>
                 {SERVICOS.map(s => <button key={s} className="serv-btn">{s}</button>)}
               </div>
             </div>
 
             {/* Barra busca + datas */}
-            <div style={{display:"flex",gap:10,marginBottom:10,alignItems:"center",flexWrap:"wrap"}}>
+            <div style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "center", flexWrap: "wrap" }}>
               <div className="search-wrap">
-                <span style={{color:"#888",marginRight:6}}>🔍</span>
-                <input placeholder="Buscar Aluno..." value={search} onChange={e=>setSearch(e.target.value)}/>
+                <span style={{ color: "#888", marginRight: 6 }}>🔍</span>
+                <input placeholder="Buscar Aluno..." value={search} onChange={e => setSearch(e.target.value)} />
               </div>
-              <div style={{display:"flex",gap:6,alignItems:"center"}}>
-                <label style={{margin:0,fontSize:12}}>Data</label>
+              <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                <label style={{ margin: 0, fontSize: 12 }}>Data</label>
                 <select className="form-control form-control-sm" defaultValue="09/04/2026">
                   <option>09/04/2026</option>
                 </select>
               </div>
-              <div style={{display:"flex",gap:6,alignItems:"center"}}>
-                <label style={{margin:0,fontSize:12}}>Ano lectivo</label>
-                <select className="form-control form-control-sm" value={anoLectivo} onChange={e=>setAnoLectivo(e.target.value)}>
+              <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                <label style={{ margin: 0, fontSize: 12 }}>Ano lectivo</label>
+                <select className="form-control form-control-sm" value={anoLectivo} onChange={e => setAnoLectivo(e.target.value)}>
                   <option>2024/2025</option>
                   <option>2025/2026</option>
                 </select>
@@ -223,14 +223,14 @@ export default function Payment() {
 
             {/* Tabela Alunos */}
             <div className="section-box">
-              <div style={{overflowX:"auto",maxHeight:200,overflowY:"auto"}}>
+              <div style={{ overflowX: "auto", maxHeight: 200, overflowY: "auto" }}>
                 <table className="aluno-table">
                   <thead>
                     <tr><th>ID</th><th>Nome</th><th>SEXO</th><th>CONTACTO</th><th>ENCARREGADO</th></tr>
                   </thead>
                   <tbody>
                     {filtrados.map(a => (
-                      <tr key={a.id} className={alunoSel?.id===a.id?"selected-row":""} onClick={()=>setAlunoSel(a)}>
+                      <tr key={a.id} className={alunoSel?.id === a.id ? "selected-row" : ""} onClick={() => setAlunoSel(a)}>
                         <td>{a.id}</td><td>{a.nome}</td><td>{a.sexo}</td><td>{a.contacto}</td><td>{a.encarregado}</td>
                       </tr>
                     ))}
@@ -243,9 +243,9 @@ export default function Payment() {
           {/* ===== COLUNA DIREITA: PEDIDOS ===== */}
           <div className="col-xs-12 col-md-4">
             <div className="section-box">
-              <div className="section-header" style={{justifyContent:"center",fontSize:14}}>Pedidos</div>
+              <div className="section-header" style={{ justifyContent: "center", fontSize: 14 }}>Pedidos</div>
 
-              <div style={{padding:"8px 6px",minHeight:80}}>
+              <div style={{ padding: "8px 6px", minHeight: 80 }}>
                 <table className="pedido-table">
                   <thead>
                     <tr>
@@ -259,9 +259,9 @@ export default function Payment() {
                         <td>{p.referente}</td>
                         <td>{p.preco.toLocaleString()}</td>
                         <td>{p.qtd}</td>
-                        <td>{fmt(p.preco*p.qtd)}</td>
+                        <td>{fmt(p.preco * p.qtd)}</td>
                         <td>
-                          <button className="rm-btn" onClick={()=>removerPedido(i)}>×</button>
+                          <button className="rm-btn" onClick={() => removerPedido(i)}>×</button>
                         </td>
                       </tr>
                     ))}
@@ -275,57 +275,57 @@ export default function Payment() {
               </div>
 
               {/* Forma de Pagamento */}
-              <div style={{padding:"12px"}}>
-                <div className="row" style={{marginBottom:10}}>
-                  <div className="col-xs-12" style={{marginBottom:8}}>
-                    <label style={{fontSize:11,color:"#555",display:"block",marginBottom:2}}>Forma de pagamento</label>
-                    <select className="form-control form-control-sm" value={formaPag} onChange={e=>setFormaPag(e.target.value)}>
-                      {["Banco","Dinheiro","Transferência"].map(f=><option key={f}>{f}</option>)}
+              <div style={{ padding: "12px" }}>
+                <div className="row" style={{ marginBottom: 10 }}>
+                  <div className="col-xs-12" style={{ marginBottom: 8 }}>
+                    <label style={{ fontSize: 11, color: "#555", display: "block", marginBottom: 2 }}>Forma de pagamento</label>
+                    <select className="form-control form-control-sm" value={formaPag} onChange={e => setFormaPag(e.target.value)}>
+                      {["Banco", "Dinheiro", "Transferência"].map(f => <option key={f}>{f}</option>)}
                     </select>
                   </div>
                   <div className="col-xs-12">
-                    <label style={{fontSize:11,color:"#555",display:"block",marginBottom:2}}>Banco / Operação</label>
-                    <div style={{display:"flex",gap:6}}>
-                      <select className="form-control form-control-sm" value={banco} onChange={e=>setBanco(e.target.value)}>
-                        {["BIC PROPIN","BAI","BFA","Millennium"].map(b=><option key={b}>{b}</option>)}
+                    <label style={{ fontSize: 11, color: "#555", display: "block", marginBottom: 2 }}>Banco / Operação</label>
+                    <div style={{ display: "flex", gap: 6 }}>
+                      <select className="form-control form-control-sm" value={banco} onChange={e => setBanco(e.target.value)}>
+                        {["BIC PROPIN", "BAI", "BFA", "Millennium"].map(b => <option key={b}>{b}</option>)}
                       </select>
-                      <select className="form-control form-control-sm" value={operacao} onChange={e=>setOperacao(e.target.value)}>
-                        {["Depósito","Transferência","Cheque"].map(o=><option key={o}>{o}</option>)}
+                      <select className="form-control form-control-sm" value={operacao} onChange={e => setOperacao(e.target.value)}>
+                        {["Depósito", "Transferência", "Cheque"].map(o => <option key={o}>{o}</option>)}
                       </select>
                     </div>
                   </div>
                 </div>
 
-                <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:12}}>
-                  <label style={{margin:0,fontSize:12,whiteSpace:"nowrap"}}>Nº de Depósito</label>
-                  <input className="form-control form-control-sm" value={nDeposito} onChange={e=>setNDeposito(e.target.value)} style={{flex:1}}/>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                  <label style={{ margin: 0, fontSize: 12, whiteSpace: "nowrap" }}>Nº de Depósito</label>
+                  <input className="form-control form-control-sm" value={nDeposito} onChange={e => setNDeposito(e.target.value)} style={{ flex: 1 }} />
                 </div>
 
                 {/* Tipo de Papel */}
-                <div style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderTop:"1px solid #eee",marginBottom:10}}>
-                  <span style={{fontSize:18}} className="fa fa-print"></span>
-                  <span style={{fontWeight:600,fontSize:12}}>Tipo de Papel</span>
-                  {["A4","Personalizado"].map(t=>(
-                    <label key={t} style={{margin:0,fontSize:12,display:"flex",alignItems:"center",gap:4,cursor:"pointer"}}>
-                      <input type="radio" name="papel" value={t} checked={tipoPapel===t} onChange={()=>setTipoPapel(t)}/> {t}
+                <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderTop: "1px solid #eee", marginBottom: 10 }}>
+                  <span style={{ fontSize: 18 }} className="fa fa-print"></span>
+                  <span style={{ fontWeight: 600, fontSize: 12 }}>Tipo de Papel</span>
+                  {["A4", "Personalizado"].map(t => (
+                    <label key={t} style={{ margin: 0, fontSize: 12, display: "flex", alignItems: "center", gap: 4, cursor: "pointer" }}>
+                      <input type="radio" name="papel" value={t} checked={tipoPapel === t} onChange={() => setTipoPapel(t)} /> {t}
                     </label>
                   ))}
                 </div>
 
                 {/* Botões de Ação */}
-                <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",paddingTop:8,borderTop:"1px solid #eee"}}>
-                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:22}} title="Avançar">›</button>
-                  <button className="btn-action" style={{background:"#2196F3",color:"#fff"}} title="Duplicar">2×</button>
-                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:16}} title="Pagamento">💰</button>
-                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:16}} title="Recibo">📄</button>
-                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:16}} title="Limpar">🧹</button>
-                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:18}} title="Confirmar">✓</button>
+                <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", paddingTop: 8, borderTop: "1px solid #eee" }}>
+                  <button className="btn-action" style={{ background: "#2196F3", color: "#fff", fontSize: 22 }} title="Avançar">›</button>
+                  <button className="btn-action" style={{ background: "#2196F3", color: "#fff" }} title="Duplicar">2×</button>
+                  <button className="btn-action" style={{ background: "#2196F3", color: "#fff", fontSize: 16 }} title="Pagamento">💰</button>
+                  <button className="btn-action" style={{ background: "#2196F3", color: "#fff", fontSize: 16 }} title="Recibo">📄</button>
+                  <button className="btn-action" style={{ background: "#2196F3", color: "#fff", fontSize: 16 }} title="Limpar">🧹</button>
+                  <button className="btn-action" style={{ background: "#2196F3", color: "#fff", fontSize: 18 }} title="Confirmar">✓</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
+
       </PageBase>
     </>
   );

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { student as data } from './mockStudent'
-import StudentSearch from '../../Student/StudentSearch'
-import StudentStats from '../../Student/StudentStats'
-import StudentTable from '../../Student/StudentTable'
-import PageBase from '../../Layout/PageBase/PageBase'
+import StudentSearch from '../../student/StudentSearch'
+import StudentStats from '../../student/StudentStats'
+import StudentTable from '../../student/StudentTable'
+import PageBase from '../../layout/PageBase/PageBase'
 
 export default function StudentDropOut() {
     const [search, setSearch] = useState("")

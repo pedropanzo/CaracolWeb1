@@ -6,7 +6,7 @@ import StudentsWithoutGrades from "../../grades/StudentsWithoutGrades"
 import StudentsWithGrades from "../../grades/StudentsWithGrades"
 import GradeForm from "../../grades/GradeForm"
 
-import PageBase from "../../Layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 export default function GradesPage() {
 
@@ -30,41 +30,41 @@ export default function GradesPage() {
 
   return (
     <PageBase title="Lançamento de notas">
-    <div className="container mt-4 row ">
+      <div className="container mt-4 row ">
 
-      <div className="col-md-3 " style={{ backgroundColor: "white", padding: "10px",  marginRight: "10px"}}>
-      <h4 className="mb-3">Lançamento de notas</h4>
-      {/* FILTROS */}
-      <GradeFilters />
-    </div>
-      <div className="col-md-3" style={{ backgroundColor: "white", padding: "10px",  marginRight: "10px"}}>
-
-        {/* ESQUERDA */}
-        <div >
-          <p className="text-center">Lista de alunos cuja as notas, não foram lançadas: </p>
-          <StudentsWithoutGrades
-            data={withoutGrades}
-            onSelect={setSelected}
-          />
+        <div className="col-md-3 " style={{ backgroundColor: "white", padding: "10px", marginRight: "10px" }}>
+          <h4 className="mb-3">Lançamento de notas</h4>
+          {/* FILTROS */}
+          <GradeFilters />
         </div>
+        <div className="col-md-3" style={{ backgroundColor: "white", padding: "10px", marginRight: "10px" }}>
 
-        {/* CENTRO */}
-        <div style={{ borderTop: "1px solid gray"}}>
-          <h1>Atribuir notas</h1>
-          <GradeForm
-            student={selected}
-            onSave={handleSave}
-          />
+          {/* ESQUERDA */}
+          <div >
+            <p className="text-center">Lista de alunos cuja as notas, não foram lançadas: </p>
+            <StudentsWithoutGrades
+              data={withoutGrades}
+              onSelect={setSelected}
+            />
+          </div>
+
+          {/* CENTRO */}
+          <div style={{ borderTop: "1px solid gray" }}>
+            <h1>Atribuir notas</h1>
+            <GradeForm
+              student={selected}
+              onSave={handleSave}
+            />
+          </div>
         </div>
-  </div>
         {/* DIREITA */}
-        
-        <div className="col-md-5" style={{ backgroundColor: "white", padding: "10px"}}>  
+
+        <div className="col-md-5" style={{ backgroundColor: "white", padding: "10px" }}>
           <p className="text-center">Lista de alunos cuja as notas, já foram lançadas: </p>
           <StudentsWithGrades data={withGrades} />
         </div>
-    
-    </div>
+
+      </div>
     </PageBase>
   )
 }

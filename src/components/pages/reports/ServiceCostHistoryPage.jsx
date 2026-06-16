@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Header from "../../reports/Header";
 import Filters from "../../reports/Filters";
 import Table from "../../reports/Table";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 const ServiceCostHistoryPage = () => {
   const [inicio, setInicio] = useState("");
   const [fim, setFim] = useState("");
 
-  const data = [  {
+  const data = [{
     classe: "1ª Classe",
     servico: "Matrícula",
     custo: "4000,00",
@@ -50,18 +50,18 @@ const ServiceCostHistoryPage = () => {
 
   return (
     <PageBase title="Historico de custos de Serviços">
-    <div style={{ padding: "21px" }}>
-      <Header />
-      
-      <Filters
-        inicio={inicio}
-        fim={fim}
-        setInicio={setInicio}
-        setFim={setFim}
-      />
+      <div style={{ padding: "21px" }}>
+        <Header />
 
-      <Table data={data} />
-    </div>
+        <Filters
+          inicio={inicio}
+          fim={fim}
+          setInicio={setInicio}
+          setFim={setFim}
+        />
+
+        <Table data={data} />
+      </div>
     </PageBase>
   );
 };

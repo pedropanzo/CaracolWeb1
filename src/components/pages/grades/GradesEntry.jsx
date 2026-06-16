@@ -5,7 +5,7 @@ import GradeFilters from "../../disciplines/DisciplineFilter"
 import StudentsWithoutGrades from "../../grades/StudentsWithoutGrades"
 import GradeFilterNotes from "../../grades/GradeEntryFilter"
 
-import PageBase from "../../Layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 export default function GradesPage() {
 
@@ -29,38 +29,38 @@ export default function GradesPage() {
 
   return (
     <PageBase title="Notas dos Alunos Cujo as Classes não estam no sistema">
-    <div className="container mt-4 row ">
+      <div className="container mt-4 row ">
 
-      <div className="col-md-3 " style={{ backgroundColor: "white", padding: "10px",  marginRight: "10px"}}>
-      <h2 className="mb-3" style={{ fontWeight: "bold"}}>Classe Actual</h2>
-      
-      {/* FILTROS */}
-      <GradeFilters />
-    
-    </div>
-    
-    <div className="col-md-5" style={{ backgroundColor: "white", padding: "10px",  marginRight: "10px"}}>
+        <div className="col-md-3 " style={{ backgroundColor: "white", padding: "10px", marginRight: "10px" }}>
+          <h2 className="mb-3" style={{ fontWeight: "bold" }}>Classe Actual</h2>
 
-        {/* Centro */}
-        <div >
-          <p className="text-center">Selecione o aluno desejado: </p>
-          <StudentsWithoutGrades
-            data={withoutGrades}
-            onSelect={setSelected}
-          />
+          {/* FILTROS */}
+          <GradeFilters />
+
         </div>
 
-    </div>
+        <div className="col-md-5" style={{ backgroundColor: "white", padding: "10px", marginRight: "10px" }}>
+
+          {/* Centro */}
+          <div >
+            <p className="text-center">Selecione o aluno desejado: </p>
+            <StudentsWithoutGrades
+              data={withoutGrades}
+              onSelect={setSelected}
+            />
+          </div>
+
+        </div>
 
         {/* DIREITA */}
-        
-        <div className="col-md-3" style={{ backgroundColor: "white", padding: "10px"}}>  
+
+        <div className="col-md-3" style={{ backgroundColor: "white", padding: "10px" }}>
           <p >... </p>
-          <h2 className="mb-3" style={{ fontWeight: "bold"}}>Notas Para:</h2>
+          <h2 className="mb-3" style={{ fontWeight: "bold" }}>Notas Para:</h2>
           <GradeFilterNotes />
         </div>
-    
-    </div>
+
+      </div>
     </PageBase>
   )
 }

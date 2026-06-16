@@ -1,7 +1,7 @@
-import PageBase from "../../Layout/PageBase/PageBase"
-import StudentsFilter from "../../Student/StudentsFilter"
-import StudentsHeader from "../../Student/StudentsHeader"
-import StudentsTable from "../../Student/StudentsTable"
+import PageBase from "../../layout/PageBase/PageBase"
+import StudentsFilter from "../../student/StudentsFilter"
+import StudentsHeader from "../../student/StudentsHeader"
+import StudentsTable from "../../student/StudentsTable"
 
 export default function StudentsAcademico() {
 

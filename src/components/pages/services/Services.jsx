@@ -4,7 +4,7 @@ import { mockServices, mockReferences } from "./mockServices";
 import ServiceTable from "./ServiceTable";
 import ReferenceForm from "./ReferenceForm";
 import ReferenceTable from "./ReferenceTable";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 
 export default function Services() {
     const [services, setServices] = useState(mockServices);
@@ -33,23 +33,23 @@ export default function Services() {
     };
 
     return (
-        <PageBase  title="Serviços">
-        <div className="container mt-4">            
-            <div className="row">
-                {/* Serviços */}
-                <div className="col-md-6">
-                    <h5>Serviços</h5>
-                    <ServiceForm onAdd={addService} />
-                    <ServiceTable services={services} onDelete={deleteService} onEdit={editService} />
-                </div>
-                {/* Referências */}
-                <div className="col-md-6">
-                    <h5 >Referências</h5>
-                    <ReferenceForm onAdd={addReference} />
-                    <ReferenceTable references={references} onDelete={deleteReference} onEdit={editReference} />
+        <PageBase title="Serviços">
+            <div className="container mt-4">
+                <div className="row">
+                    {/* Serviços */}
+                    <div className="col-md-6">
+                        <h5>Serviços</h5>
+                        <ServiceForm onAdd={addService} />
+                        <ServiceTable services={services} onDelete={deleteService} onEdit={editService} />
+                    </div>
+                    {/* Referências */}
+                    <div className="col-md-6">
+                        <h5 >Referências</h5>
+                        <ReferenceForm onAdd={addReference} />
+                        <ReferenceTable references={references} onDelete={deleteReference} onEdit={editReference} />
+                    </div>
                 </div>
             </div>
-        </div>
         </PageBase>
     )
 }

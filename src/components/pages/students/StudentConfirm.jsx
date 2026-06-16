@@ -1,11 +1,11 @@
-import StudentInfo from "../../Student/StudentInfo"
-import AcademicHistory from "../../Student/AcademicHistory"
-import StudentConfirmForm from "../../Student/StudentConfirmForm"
+import StudentInfo from "../../student/StudentInfo"
+import AcademicHistory from "../../student/AcademicHistory"
+import StudentConfirmForm from "../../student/StudentConfirmForm"
 
 import {
     studentInfo, history, courses, classes, turmas
 } from "./mockStudent"
-import PageBase from "../../Layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 export default function StudentConfirm() {
     return (

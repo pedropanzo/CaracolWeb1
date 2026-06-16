@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DepartmentForm from './DepartmentForm';
 import { mockDepartments } from './mockDepartments';
-import PageBase from '../../Layout/PageBase/PageBase';
+import PageBase from '../../layout/PageBase/PageBase';
 
 export default function DepartmentsList() {
     const [departments, setDepartments] = useState(mockDepartments);
@@ -19,7 +19,7 @@ export default function DepartmentsList() {
         <PageBase title="Departamento">
             <div className="card shadow-sm">
                 <div className='card-body'>
-                    <div className="d-flex justify-content-between mb-3">                        
+                    <div className="d-flex justify-content-between mb-3">
                         <button className='btn btn-primary' onClick={() => setShowModal(true)}>
                             Novo Departamento
                         </button>

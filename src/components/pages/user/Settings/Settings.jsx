@@ -1,4 +1,4 @@
-import PageBase from "../../../Layout/PageBase/PageBase";
+import PageBase from "../../../layout/PageBase/PageBase";
 import ChangePassword from "./ChangePassword";
 import NotificationPreferences from "./NotificationPreferences";
 import agt from "../../../../assets/img/agt.png";
@@ -604,7 +604,7 @@ export default function Settings() {
             </div>
           </div>
         </div>
-      </div>                
+      </div>
     </PageBase >
   );
 }

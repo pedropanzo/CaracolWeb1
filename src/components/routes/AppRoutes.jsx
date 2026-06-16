@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
-import AppLayout from '../Layout/AppLayout'
+import AppLayout from '../layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
-import AuthLayout from '../Layout/AuthLayout';
+import AuthLayout from '../layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
@@ -11,7 +11,7 @@ import Dashboard2 from '../pages/dashboard/Dashboard2';
 import Message from '../pages/message/Message';
 
 import StudentList from '../pages/students/StudentsList';
-import StudentForm from '../pages/students/StudentForm';
+
 import StudentsAcademico from '../pages/students/StudentsAcademico';
 import StudentConfirm from '../pages/students/StudentConfirm';
 import SuspensionPage from '../pages/students/SuspensionPage';
@@ -48,12 +48,12 @@ import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 import TurmasReportPage from "../pages/reports/TurmasReportPage";
 import ExcessoesPage from "../pages/reports/ExcessoesPage";
 
-import  InscricaoAlunoModal  from "../pages/students/InscricaoAlunoModal";
+import InscricaoAlunoModal from "../pages/students/InscricaoAlunoModal";
 
 export default function AppRoutes() {
-  
-  
-  return (  
+
+
+  return (
 
     <Routes>
 
@@ -72,10 +72,7 @@ export default function AppRoutes() {
           <Route path="/message/Message" element={<Message />} />
 
           <Route path="/alunos" element={<StudentList />} />
-
-          {/*<Route path="/alunos/novo" element={<InscricaoAlunoModal />} />*/}
-
-          <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/alunos/novo" element={<InscricaoAlunoModal />} />
           <Route path="/alunos/confirmacao" element={<StudentConfirm />} />
           <Route path="/alunos/index" element={<StudentsAcademico />} />
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
@@ -89,18 +86,23 @@ export default function AppRoutes() {
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
           <Route path="/departamentos" element={<DepartmentsList />} />
           <Route path="/servicos" element={<Services />} />
+          <Route path='/custo-servico' element={<ServiceCostPage />} />
+
           <Route path="/Classe" element={<Classes />} />
           <Route path='/Disciplina' element={<Disciplina />} />
-          <Route path='/custo-servico' element={<ServiceCostPage />} />
-          <Route path='/lancamento-notas' element={<Grades />} />
+
           <Route path='/Banco' element={<Banks />} />
+
+          <Route path='/lancamento-notas' element={<Grades />} />
           <Route path='/notas-implantadas' element={<GradesEntry />} />
           <Route path='/Imp-lista-nominal-alunos' element={<NominalList />} />
+
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
           <Route path="/transicaodeclasse" element={<StudentStatus />} />
+
           <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents />} />
           <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent />} />
           <Route path="/Imp-professores" element={<TeachersReport />} />

@@ -2,14 +2,14 @@ import React from "react";
 import HeaderExcessoes from "../../reports/excessoes/HeaderExcessoes";
 import ExcessoesTable from "../../reports/excessoes/ExcessoesTable";
 import ServicosTable from "../../reports/excessoes/ServicosTable";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 
 const ExcessoesPagamentoPage = () => {
   return (
     <PageBase title=" Alunos com excessões de pagamento" >
 
-     
-      <HeaderExcessoes />      
+
+      <HeaderExcessoes />
 
       <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
         <div style={{ flex: 3 }}>
@@ -20,7 +20,7 @@ const ExcessoesPagamentoPage = () => {
           <ServicosTable />
         </div>
       </div>
-     
+
     </PageBase>
   );
 };

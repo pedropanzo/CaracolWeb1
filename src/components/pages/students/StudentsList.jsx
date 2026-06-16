@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import  DataTable  from '../../Table/DataTable';
+import  DataTable  from '../../table/DataTable';
 import AdvancedFilters from '../../filters/AdvancedFilters';
 {/*import ExportButtons from '../../export/ExportButtons';*/}
 

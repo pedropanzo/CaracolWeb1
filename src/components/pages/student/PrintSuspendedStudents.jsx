@@ -1,20 +1,20 @@
 // src/pages/student/PrintSuspendedStudents.jsx
 import React from "react";
-import SuspendedHeader from "../../Student/SuspendedHeader";
-import SuspendedTable from "../../Student/SuspendedTable";
-import { suspendedStudents } from "../../Student/data/suspendedStudents";
-import PageBase from "../../Layout/PageBase/PageBase"
+import SuspendedHeader from "../../student/SuspendedHeader";
+import SuspendedTable from "../../student/SuspendedTable";
+import { suspendedStudents } from "../../student/data/suspendedStudents";
+import PageBase from "../../layout/PageBase/PageBase"
 
 const PrintSuspendedStudents = () => {
   return (
     <PageBase title="Impressao pedagogica">
-    <div className="container-fluid py-4" style={{ background: "#f4f6fb" }}>
+      <div className="container-fluid py-4" style={{ background: "#f4f6fb" }}>
 
-      <SuspendedHeader total={suspendedStudents.length} />
+        <SuspendedHeader total={suspendedStudents.length} />
 
-      <SuspendedTable students={suspendedStudents} />
+        <SuspendedTable students={suspendedStudents} />
 
-    </div>
+      </div>
     </PageBase>
   );
 };
