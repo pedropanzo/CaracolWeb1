@@ -93,7 +93,7 @@ export default function PrintPanel({ activeTab, setActiveTab, onClose }) {
     >
       <div className="pp-titlebar" onMouseDown={onPointerDown}>
         <GripHorizontal size={16} className="pp-grip" />
-        <span className="pp-titlebar-label">PAINEL DE IMPRESSÃO</span>
+        <span className="pp-titlebar-label">Impressão</span>
         <div className="pp-titlebar-actions">
           <button
             className="pp-icon-btn"

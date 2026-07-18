@@ -30,6 +30,11 @@ const Sidebar = () => {
             onClick: () => openPrintPanel("Adm"),
         },
         {
+            icon: iconprint,
+            name: "Teste 2",
+            onClick: () => openPrintPanel("Financ."),
+        },
+        {
             icon: iconhome,
             name: "Home | Dashboard",
             submenu: [
@@ -107,20 +112,9 @@ const Sidebar = () => {
             ]
         },
         {
-            icon: iconprint, name: "Impressões",
-            submenu: [
-                { name: "Imp. Administrativas", path: "/Imp-admin" },
-                { name: "Imp. Pedagógicas", path: "/Imp-pedagogica" },
-                { name: "Imp. Funcionarios", path: "/Imp-funcionario" },
-                { name: "Imp. Finançeiras", path: "/Imp-financeiras" },
-                { name: "Imp. Lista nominal de alunos", path: "/Imp-lista-nominal-alunos" },
-                { name: "Imp. Lista nominal de professores", path: "/Imp-professores" },
-                { name: "Imp. Alunos desistentes", path: "/Imp-lista-desistente-alunos" },
-                { name: "Imp. Histórico de classes", path: "/Imp-historico-classes" },
-                { name: "Imp. Historico de custos de serviços", path: "/Imp-historico-custos" },
-                { name: "Imp. Historico de turmas criadas", path: "/Imp-historico-de-turmas-criadas" },
-                { name: "Imp. Excessoes de pagamento", path: "/Imp-excessoes-de-pagamento" },
-            ]
+            icon: iconprint, 
+            name: "Impressões",
+            onClick: () => openPrintPanel("Adm"),                   
         },
         {
             icon: iconsettings,
@@ -177,33 +171,16 @@ const Sidebar = () => {
                                     <ul className="nav nav-second-level collapse">
                                         {item.submenu.map((sub) => (
                                             <li key={sub.path}>
-                                                <Link to={sub.path} state={sub.func}>{sub.name} </Link>
-
-
-
+                                                <Link to={sub.path} onClick={item.onClick} state={sub.func}>{sub.name} </Link>
                                             </li>
                                         ))}
                                     </ul>
                                 </>
                             ) : (
-                                
-                                    item.name === "Teste" ? (
-                                        <button
-                                            type="button"
-                                            title={item.name}
-                                            className={`sb-btn`}
-                                            onClick={item.onClick}
-                                        >
-                                            Teste
-                                        </button>
-                                    ) : (
-                                        <Link to={item.path} className={`${location.pathname.startsWith(item.path)}`}>
-                                            <img src={item.icon} style={{ marginRight: "5px" }} />
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    )
-                                
-
+                                <Link to={item.path} onClick={item.onClick} className={`${location.pathname.startsWith(item.path)}`}>
+                                    <img src={item.icon} style={{ marginRight: "5px" }} />
+                                    <span>{item.name}</span>
+                                </Link>
                             )}
                         </li>
                     ))}
