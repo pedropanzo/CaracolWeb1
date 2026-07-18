@@ -16,18 +16,26 @@ import { Link, useLocation } from "react-router-dom"
 import { useAuth } from "../../../hooks/useAuth"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+import { usePrintPanel } from "../../../context/PrintPanelContext";
+
 const Sidebar = () => {
+    const { openPrintPanel } = usePrintPanel();
     const location = useLocation()
-    const { user } = useAuth()    
+    const { user } = useAuth()
 
     const menu = [
+        {
+            icon: iconprint,
+            name: "Teste",
+            onClick: () => openPrintPanel("Adm"),
+        },
         {
             icon: iconhome,
             name: "Home | Dashboard",
             submenu: [
                 { name: "Home", path: "/" },
                 { name: "Dashboard 1", path: "/dashboard/dashboard1" },
-                { name: "Dashboard 2", path: "/dashboard/dashboard2" },                
+                { name: "Dashboard 2", path: "/dashboard/dashboard2" },
             ],
         },
         { icon: iconsms, name: "SMS | Email", path: "/message/Message" },
@@ -57,7 +65,7 @@ const Sidebar = () => {
             name: "Implementações",
             submenu: [
                 { name: "Curso", path: "/Curso" },
-                { name: "Classe", path: "/Classe" },                            
+                { name: "Classe", path: "/Classe" },
                 { name: "Turma", path: "/Turma" },
                 { name: "Discplina", path: "/Disciplina" },
                 { name: "Horário", path: "/Horario" },
@@ -71,10 +79,10 @@ const Sidebar = () => {
                 { name: "Cumprimento de notas", path: "/TransferredNotes" },
                 { name: "Notas implantadas", path: "/notas-implantadas" },
                 { name: "Transição de classe", path: "/Turma" },
-                
+
                 { name: "Cumprimento de notas", path: "/" },
                 { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
-               
+
             ],
         },
         {
@@ -85,7 +93,7 @@ const Sidebar = () => {
                 { name: "Acumulados", path: "/Acumulados" },
                 { name: "Estatísticas financeira", path: "/Estatisticas" },
                 { name: "Banco", path: "/Banco" },
-               
+
             ]
         },
         {
@@ -109,9 +117,9 @@ const Sidebar = () => {
                 { name: "Imp. Lista nominal de professores", path: "/Imp-professores" },
                 { name: "Imp. Alunos desistentes", path: "/Imp-lista-desistente-alunos" },
                 { name: "Imp. Histórico de classes", path: "/Imp-historico-classes" },
-                { name: "Imp. Historico de custos de serviços", path:"/Imp-historico-custos"}, 
-                { name: "Imp. Historico de turmas criadas", path:"/Imp-historico-de-turmas-criadas"},
-                 { name: "Imp. Excessoes de pagamento", path:"/Imp-excessoes-de-pagamento"},
+                { name: "Imp. Historico de custos de serviços", path: "/Imp-historico-custos" },
+                { name: "Imp. Historico de turmas criadas", path: "/Imp-historico-de-turmas-criadas" },
+                { name: "Imp. Excessoes de pagamento", path: "/Imp-excessoes-de-pagamento" },
             ]
         },
         {
@@ -125,6 +133,7 @@ const Sidebar = () => {
                 { name: "Configurações", path: "/escolas" },
             ],
         },
+
     ]
     return (<>
         <nav className="navbar-default navbar-static-side" role="navigation">
@@ -163,26 +172,39 @@ const Sidebar = () => {
                         <li key={item.name}>
                             {item.submenu ? (
                                 <>
-                                    <a className={`${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                    <a className={`${location.pathname.startsWith(item.path) ? "active" : ""}`}>
                                         <img style={{ marginRight: "5px" }} src={item.icon} /> <span className="nav-label">  {item.name}</span></a>
                                     <ul className="nav nav-second-level collapse">
                                         {item.submenu.map((sub) => (
                                             <li key={sub.path}>
-                                                <Link to={sub.path} state={sub.func}>{sub.name} </Link>
+
+                                               
+                                                    <button
+                                                        type="button"
+                                                        title={item.name}
+                                                        className={`sb-btn`}
+                                                        onClick={item.onClick}
+                                                    > Teste
+                                                    </button>
+                                              
                                             </li>
                                         ))}
                                     </ul>
                                 </>
                             ) : (<>
-                                <Link to={item.path} className={`${location.pathname.startsWith(item.path) ? "active" : "" }`}>
-                                    <img src={item.icon} style={{ marginRight: "5px" }} /> <span> {item.name}</span>
-                                </Link>
+                                <button
+                                                        type="button"
+                                                        title={item.name}
+                                                        className={`sb-btn`}
+                                                        onClick={item.onClick}
+                                                    > Teste
+                                                    </button>
 
 
                             </>)}
                         </li>
                     ))}
-                    { /*  =====================================================*/}                                    
+                    { /*  =====================================================*/}
 
                 </ul>
             </div>

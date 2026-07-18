@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import  AppRoutes  from './components/routes/AppRoutes.jsx'
+import AppRoutes from './components/routes/AppRoutes.jsx'
 
 import './assets/css/bootstrap.min.css';
 import './assets/font-awesome/css/font-awesome.css'
@@ -15,11 +15,17 @@ import './assets/js/plugins/slimscroll/jquery.slimscroll.min.js'
 import './assets/js/inspinia.js'
 import './assets/js/plugins/pace/pace.min.js'
 
+import { PrintPanelProvider } from './context/PrintPanelContext';
+
 function App() {
   return (
+
     <BrowserRouter>
-      <AppRoutes />
+      <PrintPanelProvider>
+        <AppRoutes />
+      </PrintPanelProvider>
     </BrowserRouter>
+
   )
 }
 
