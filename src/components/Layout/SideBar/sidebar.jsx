@@ -177,31 +177,34 @@ const Sidebar = () => {
                                     <ul className="nav nav-second-level collapse">
                                         {item.submenu.map((sub) => (
                                             <li key={sub.path}>
+                                                <Link to={sub.path} state={sub.func}>{sub.name} </Link>
 
-                                               
-                                                    <button
-                                                        type="button"
-                                                        title={item.name}
-                                                        className={`sb-btn`}
-                                                        onClick={item.onClick}
-                                                    > Teste
-                                                    </button>
-                                              
+
+
                                             </li>
                                         ))}
                                     </ul>
                                 </>
-                            ) : (<>
-                                <button
-                                                        type="button"
-                                                        title={item.name}
-                                                        className={`sb-btn`}
-                                                        onClick={item.onClick}
-                                                    > Teste
-                                                    </button>
+                            ) : (
+                                
+                                    item.name === "Teste" ? (
+                                        <button
+                                            type="button"
+                                            title={item.name}
+                                            className={`sb-btn`}
+                                            onClick={item.onClick}
+                                        >
+                                            Teste
+                                        </button>
+                                    ) : (
+                                        <Link to={item.path} className={`${location.pathname.startsWith(item.path)}`}>
+                                            <img src={item.icon} style={{ marginRight: "5px" }} />
+                                            <span>{item.name}</span>
+                                        </Link>
+                                    )
+                                
 
-
-                            </>)}
+                            )}
                         </li>
                     ))}
                     { /*  =====================================================*/}
