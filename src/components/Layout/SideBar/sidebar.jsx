@@ -23,17 +23,7 @@ const Sidebar = () => {
     const location = useLocation()
     const { user } = useAuth()
 
-    const menu = [
-        {
-            icon: iconprint,
-            name: "Teste",
-            onClick: () => openPrintPanel("Adm"),
-        },
-        {
-            icon: iconprint,
-            name: "Teste 2",
-            onClick: () => openPrintPanel("Financ."),
-        },
+    const menu = [       
         {
             icon: iconhome,
             name: "Home | Dashboard",
