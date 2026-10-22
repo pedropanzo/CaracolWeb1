@@ -49,6 +49,7 @@ import TurmasReportPage from "../pages/reports/TurmasReportPage";
 import ExcessoesPage from "../pages/reports/ExcessoesPage";
 
 import InscricaoAlunoModal from "../pages/students/InscricaoAlunoModal";
+import TransportPage from "../pages/transport/TransportPage";
 
 export default function AppRoutes() {
 
@@ -102,6 +103,13 @@ export default function AppRoutes() {
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
           <Route path="/transicaodeclasse" element={<StudentStatus />} />
+
+          <Route path="/transporte/rotas" element={<TransportPage />} />
+          <Route path="/transporte/passageiros" element={<TransportPage />} />
+          <Route path="/transporte/viaturas" element={<TransportPage />} />
+          <Route path="/transporte/pagamentos" element={<TransportPage />} />
+          <Route path="/transporte/custos" element={<TransportPage />} />
+          <Route path="/transporte/relatorios" element={<TransportPage />} />
 
           <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents />} />
           <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent />} />

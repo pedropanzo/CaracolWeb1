@@ -94,11 +94,12 @@ const Sidebar = () => {
         {
             icon: icontransport, name: "Serviço de Transporte",
             submenu: [
-                { name: "Viaturas", path: "/Viaturas" },
-                { name: "Controlo de Rotas", path: "/Despesas" },
-                { name: "Controlo de pessageiros", path: "/passageiros" },
-                { name: "Pagamentos", path: "/pagamentos" },
-                { name: "Custos", path: "/custos" },
+                { name: "Controlo de Rotas", path: "/transporte/rotas" },
+                { name: "Passageiros", path: "/transporte/passageiros" },
+                { name: "Viaturas", path: "/transporte/viaturas" },
+                { name: "Pagamentos", path: "/transporte/pagamentos" },
+                { name: "Custos", path: "/transporte/custos" },
+                { name: "Relatórios", path: "/transporte/relatorios" },
             ]
         },
         {
