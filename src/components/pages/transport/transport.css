@@ -207,9 +207,9 @@
 .transport-student-icon, .transport-school-icon { border: 0; background: transparent; }
 .transport-student-icon span { display: grid; width: 32px; height: 32px; place-items: center; border: 2px solid #fff; border-radius: 50% 50% 50% 4px; color: #fff; background: #e28a32; box-shadow: 0 2px 7px #18293255; font-family: 'Century Gothic', sans-serif; font-size: 11px; font-weight: 700; transform: rotate(-45deg); }
 .transport-school-icon span { display: grid; width: 38px; height: 38px; place-items: center; border: 3px solid #fff; border-radius: 50%; color: #fff; background: var(--teal); box-shadow: 0 2px 8px #18293255; font-size: 10px; font-weight: 700; }
-.transport-map-popup-content { display: flex; min-width: 180px; flex-direction: column; gap: 5px; font-family: 'Century Gothic', sans-serif; }
-.transport-map-popup-content strong { color: #253446; font-size: 14px; }
-.transport-map-popup-content span, .transport-map-popup-content small { color: #65737b; font-size: 12px; }
+.transport-map-popup-content { display: flex; min-width: 180px; flex-direction: column; gap: 5px; color: #e8eef2; font-family: 'Century Gothic', sans-serif; }
+.transport-map-popup-content strong { color: #f0f5f7; font-size: 14px; }
+.transport-map-popup-content span, .transport-map-popup-content small { color: #b9c6cd; font-size: 12px; }
 .map-legend { z-index: 500; font-size: 12px; }
 .route-strip-item strong { font-size: 13px; }
 .route-strip-item small { font-size: 11px; }
@@ -258,3 +258,78 @@
   .transport-report-overview, .transport-report-panel { break-inside: avoid; box-shadow: none; }
   .transport-report-grid { grid-template-columns: 1fr 1fr; }
 }
+
+.transport-leaflet-map .leaflet-tile { filter: saturate(.78) contrast(1.02); }
+.transport-leaflet-map .leaflet-marker-icon { transition: transform 1.8s linear !important; }
+.transport-student-icon span { display: block; width: 42px; height: 42px; overflow: hidden; border: 3px solid #fff; border-radius: 50%; background: #dce4e2; box-shadow: 0 2px 8px #18293266; transform: none; }
+.transport-student-icon img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.transport-school-icon span { width: 40px; height: 40px; background: #007AF0; }
+.transport-live-vehicle-icon { display: flex; align-items: center; justify-content: center; gap: 4px; border: 0; background: transparent; }
+.transport-live-vehicle-icon > span { display: grid; width: 35px; height: 35px; place-items: center; border: 3px solid #fff; border-radius: 50%; color: #fff; background: #007AF0; box-shadow: 0 2px 9px #102b3b70; }
+.transport-live-vehicle-icon svg { width: 21px; height: 21px; fill: currentColor; }
+.transport-live-vehicle-icon small { padding: 4px 6px; border: 1px solid #dce4e8; border-radius: 3px; color: #364650; background: #fff; box-shadow: 0 1px 5px #102b3b2b; font-family: 'Century Gothic', sans-serif; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.transport-route-line { stroke-linecap: round; stroke-linejoin: round; animation: route-dash-flow 1.25s linear infinite; }
+@keyframes route-dash-flow { to { stroke-dashoffset: -44; } }
+.vehicle-tracking-section { margin-top: 20px; }
+.vehicle-tracking-map { height: 460px; }
+.gps-demo-status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: #29724f; font-size: 13px; font-weight: 600; }
+.gps-demo-status small { width: 100%; margin-left: 17px; color: #84918b; font-size: 11px; font-weight: 400; }
+.gps-live-dot { width: 9px; height: 9px; border-radius: 50%; background: #31a36b; box-shadow: 0 0 0 4px #31a36b22; animation: gps-pulse 1.8s ease-out infinite; }
+@keyframes gps-pulse { 50% { box-shadow: 0 0 0 8px #31a36b08; } }
+.legend-vehicle { display: inline-block; width: 10px; height: 10px; margin-left: 8px; border: 2px solid #fff; border-radius: 50%; background: #007AF0; box-shadow: 0 0 0 1px #007AF0; }
+.vehicle-location-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-top: 0; border-radius: 0 0 4px 4px; background: #fff; }
+.vehicle-location-row { display: flex; min-width: 0; align-items: center; gap: 9px; padding: 12px; border-right: 1px solid var(--line); }
+.vehicle-location-row:last-child { border-right: 0; }
+.vehicle-location-dot { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; }
+.vehicle-location-row > div { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 4px; }
+.vehicle-location-row strong { color: #34434d; font-size: 12px; }
+.vehicle-location-row small { overflow: hidden; color: #78858b; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  .transport-route-line, .gps-live-dot { animation: none; }
+  .transport-leaflet-map .leaflet-marker-icon { transition: none !important; }
+}
+@media (max-width: 1000px) {
+  .vehicle-location-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vehicle-location-row:nth-child(2) { border-right: 0; }
+  .vehicle-location-row:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 650px) {
+  .vehicle-tracking-map { height: 360px; }
+  .transport-section-heading:has(.gps-demo-status) { align-items: flex-start; }
+  .vehicle-location-list { grid-template-columns: 1fr; }
+  .vehicle-location-row { border-right: 0; border-bottom: 1px solid var(--line); }
+  .vehicle-location-row:last-child { border-bottom: 0; }
+  .gps-demo-status { font-size: 12px; }
+}
+
+.transport-map { background: #162129; }
+.transport-leaflet-map { color: #e8eef2; background: #162129; }
+.transport-leaflet-map .leaflet-tile { filter: invert(1) hue-rotate(180deg) brightness(.72) contrast(.9) saturate(.65); }
+.transport-leaflet-map .leaflet-marker-icon { transition: transform 1.25s linear !important; }
+.transport-leaflet-map .leaflet-control-zoom a { border-color: #394952; color: #e6edf1; background: #1b2a33; }
+.transport-leaflet-map .leaflet-control-zoom a:hover { background: #2a3b45; }
+.transport-leaflet-map .leaflet-control-attribution { color: #d4dce0; background: #1b2a33dd; }
+.transport-leaflet-map .leaflet-control-attribution a { color: #83c6ff; }
+.transport-leaflet-map .leaflet-popup-content-wrapper, .transport-leaflet-map .leaflet-popup-tip { color: #e8eef2; background: #1b2a33; }
+.transport-leaflet-map .leaflet-popup-content { margin: 13px 15px; }
+.transport-live-vehicle-icon > span { width: 38px; height: 38px; background: #007AF0; box-shadow: 0 2px 9px #102b3b99; }
+.transport-live-vehicle-icon.vehicle-type-car > span { background: #db7b2e; }
+.transport-live-vehicle-icon.vehicle-type-bus > span { background: #007AF0; }
+.transport-live-vehicle-icon small { border-color: #4a5a63; color: #edf3f6; background: #1b2a33; box-shadow: 0 1px 5px #102b3b70; }
+.transport-route-line { animation-duration: 1.8s; }
+.vehicle-location-list { border-color: #394952; background: #1b2a33; }
+.vehicle-location-row { border-color: #394952; }
+.vehicle-location-row strong { color: #e7eef2; }
+.vehicle-location-row small { color: #b2c0c8; }
+.vehicle-tracking-section .transport-map-section { border-color: #394952; }
+@media (max-width: 1000px) {
+  .vehicle-location-row:nth-child(-n + 2) { border-bottom-color: #394952; }
+}
+@media (max-width: 650px) {
+  .vehicle-location-row { border-bottom-color: #394952; }
+}
+.transport-live-vehicle-icon { display: block; border: 0; background: transparent; }
+.transport-live-vehicle-icon > span, .transport-live-vehicle-icon .vehicle-model { display: block; width: 64px; height: 92px; padding: 0; border: 0; border-radius: 0; color: transparent; background: transparent; box-shadow: none; transform-origin: center; }
+.transport-live-vehicle-icon.vehicle-type-car > span.vehicle-model, .transport-live-vehicle-icon.vehicle-type-bus > span.vehicle-model { border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
+.transport-live-vehicle-icon svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 3px 3px #0009); }
+.transport-live-vehicle-icon.vehicle-type-car svg { filter: drop-shadow(0 2px 3px #0009); }
