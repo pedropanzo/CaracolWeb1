@@ -7,8 +7,7 @@ export default function StudentSearch({ search, setSearch }) {
                 placeholder="Buscar Aluno..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-            />
-        
+            />        
 
     )
 }
