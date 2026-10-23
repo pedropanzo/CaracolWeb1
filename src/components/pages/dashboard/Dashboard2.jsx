@@ -1,9 +1,6 @@
-import DashboardGrid from '../../dashboard/DashboardGrid'
 import PageBase from '../../layout/PageBase/PageBase'
 
 export default function Dashboard() {
-
-
   return (
     <PageBase>
       <center>
