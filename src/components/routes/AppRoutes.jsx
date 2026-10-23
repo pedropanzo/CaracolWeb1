@@ -74,7 +74,6 @@ export default function AppRoutes() {
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
           <Route path='/alunos/suspensao' element={<SuspensionPage />} />
 
-
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
 
