@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
-import AppLayout from '../layout/AppLayout'
+import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
-import AuthLayout from '../layout/AuthLayout';
+import AuthLayout from '../Layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
