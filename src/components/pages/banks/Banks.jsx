@@ -7,6 +7,7 @@ import BankFilters from '../../banks/BankFilters';
 
 import PageBase from '../../Layout/PageBase/PageBase'
 
+
 export default function Banks() {
     const [data, setData] = useState(banksMock)
     const [showModal, setShowModal] = useState(false)
