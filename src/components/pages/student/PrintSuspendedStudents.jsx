@@ -1,7 +1,7 @@
 // src/pages/student/PrintSuspendedStudents.jsx
 import React from "react";
-import SuspendedHeader from "../../student/SuspendedHeader";
-import SuspendedTable from "../../student/SuspendedTable";
+import SuspendedHeader from "../../Student/SuspendedHeader";
+import SuspendedTable from "../../Student/SuspendedTable";
 import { useStudentStore } from "../../../stores/student.store";
 import PageBase from "../../Layout/PageBase/PageBase"
 

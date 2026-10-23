@@ -1,4 +1,4 @@
-import { useUIStore } from '../store/ui.store'
+import { useUIStore } from '../stores/ui.store'
 
 export const useUI = () => {
   const {

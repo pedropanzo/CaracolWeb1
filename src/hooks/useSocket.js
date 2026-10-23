@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { socket } from "../services/socket";
-import { useNotifications } from "../context/NotificationContext";
+import { useNotification } from "./useNotification";
 
 export function useSocket() {
-  const { addNotification } = useNotifications();
+  const { addNotification } = useNotification();
 
   useEffect(() => {
     socket.on("notification", data => {
@@ -15,5 +15,5 @@ export function useSocket() {
     });
 
     return () => socket.off("notification");
-  }, []);
+  }, [addNotification]);
 }

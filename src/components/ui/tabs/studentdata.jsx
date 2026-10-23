@@ -1,4 +1,4 @@
-import EmergencyContacts from "./EmergencyContacts";
+import EmergencyContacts from "./emergencycontacts";
 
 export default function StudentData() {
   return (

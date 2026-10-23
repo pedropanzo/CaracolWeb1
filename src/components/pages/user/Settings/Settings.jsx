@@ -2,7 +2,6 @@ import PageBase from "../../../Layout/PageBase/PageBase";
 import ChangePassword from "./ChangePassword";
 import NotificationPreferences from "./NotificationPreferences";
 import agt from "../../../../assets/img/agt.png";
-//import caracollogo from "../../../../assets/img/caracol.png";
 
 export default function Settings() {
   return (

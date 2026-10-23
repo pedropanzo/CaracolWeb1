@@ -1,6 +1,6 @@
 import { useState } from "react";
-import StudentData from "../../../components/ui/tabs/StudentData";
-import AcademicTimeline from "../../../components/ui/tabs/AcademicTimeline";
+import StudentData from "../../../components/ui/tabs/studentdata";
+import AcademicTimeline from "../../../components/ui/tabs/academictimeline";
 import Grades from "../../../components/ui/tabs/Grades";
 import Attendance from "../../../components/ui/tabs/Attendance";
 import PaymentsHistory from "../../../components/ui/tabs/PaymentsHistory";

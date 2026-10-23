@@ -1,5 +1,5 @@
 import { Input } from "../../../Input/input";
-import Button from "../../../button/button";
+import Button from "../../../Button/button";
 
 export default function ProfileForm() {
   return (

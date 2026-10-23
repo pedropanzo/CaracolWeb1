@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import { courses, classData } from "./mockClass"
-import CourseFilter from "../../classes/CourseFilter"
-import ClassTable from "../../classes/ClassTable"
-//import ClassModal from "../../Classes/ClassModal"
-import TurmaModal from '../../turma/TurmaModal'
+import CourseFilter from "../../Classes/CourseFilter"
+import ClassTable from "../../Classes/ClassTable"
+import ClassModal from "../../Classes/ClassModal"
+import TurmaModal from '../../Turma/TurmaModal'
 import PageBase from "../../Layout/PageBase/PageBase"
 
 export default function Classes() {
@@ -64,6 +64,7 @@ export default function Classes() {
                     </div>
                 </div>
                 <ClassModal
+                    key={editing?.id ?? "new"}
                     show={showModal}
                     onClose={() => setShowModal(false)}
                     onSave={addClass}

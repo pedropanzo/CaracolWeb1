@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import  DataTable  from '../../table/DataTable';
+import DataTable from '../../Table/DataTable';
 import AdvancedFilters from '../../filters/AdvancedFilters';
 import PageBase from '../../Layout/PageBase/PageBase';
 import { useStudentStore } from '../../../stores/student.store';

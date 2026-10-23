@@ -1,4 +1,4 @@
-import { useNotificationsStore } from '../store/notifications.store'
+import { useNotificationsStore } from '../stores/notification.store'
 
 export const useNotification = () => {
   const {
