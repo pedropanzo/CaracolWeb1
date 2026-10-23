@@ -1,4 +1,4 @@
-import PageBase from '../../layout/PageBase/PageBase.jsx'
+import PageBase from '../../layout/PageBase/PageBase';
 
 export default function Dashboard() {
 
