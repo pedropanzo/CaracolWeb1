@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 import { banksMock } from "../banks/banksMock";
 
 const ALUNOS = [

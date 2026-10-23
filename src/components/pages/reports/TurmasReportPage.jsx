@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderReport from "../../../components/reports/HeaderReport";
 import TurmasTable from "../../../components/reports/TurmasTable";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 
 const TurmasReportPage = () => {
   return (

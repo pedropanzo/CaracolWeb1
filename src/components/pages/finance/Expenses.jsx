@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import PageBase from '../../Layout/PageBase/PageBase'
+import PageBase from '../../layout/PageBase/PageBase'
 
 const initialExpenses = [
     { id: 1, date: '2026-10-03', category: 'Material escolar', description: 'Papel e consumíveis de impressão', amount: 48500, method: 'Transferência' },
