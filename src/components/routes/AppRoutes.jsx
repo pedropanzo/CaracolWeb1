@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
-import AppLayout from '../layout/AppLayout'
+import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
-import AuthLayout from '../layout/AuthLayout';
+import AuthLayout from '../Layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
@@ -9,9 +9,7 @@ import Dashboard1 from '../pages/dashboard/Dashboard1';
 import Dashboard2 from '../pages/dashboard/Dashboard2';
 
 import Message from '../pages/message/Message';
-
 import StudentList from '../pages/students/StudentsList';
-
 import StudentsAcademico from '../pages/students/StudentsAcademico';
 import StudentConfirm from '../pages/students/StudentConfirm';
 import SuspensionPage from '../pages/students/SuspensionPage';
@@ -53,12 +51,9 @@ import StaffPage from "../pages/staff/StaffPage";
 import PedagogicalPage from "../pages/pedagogical/PedagogicalPage";
 
 export default function AppRoutes() {
-
-
   return (
 
     <Routes>
-
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -125,8 +120,6 @@ export default function AppRoutes() {
           <Route path="/Imp-historico-custos" element={<ServiceCostHistoryPage />} />
           <Route path="/Imp-historico-de-turmas-criadas" element={<TurmasReportPage />} />
           <Route path="/Imp-excessoes-de-pagamento" element={<ExcessoesPage />} />
-
-
         </Route>
       </Route>
 
