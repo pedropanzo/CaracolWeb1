@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { useStudentStore } from '../../../stores/student.store'
-import StudentSearch from '../../student/StudentSearch'
-import StudentStats from '../../student/StudentStats'
-import StudentTable from '../../student/StudentTable'
-import PageBase from '../../Layout/PageBase/PageBase'
+import { useState } from 'react';
+import { useStudentStore } from '../../../stores/student.store';
+import StudentSearch from '../../student/StudentSearch';
+import StudentStats from '../../student/StudentStats';
+import StudentTable from '../../student/StudentTable';
+import PageBase from '../../Layout/PageBase/PageBase';
 
 export default function StudentPage() {
     const [search, setSearch] = useState("")
