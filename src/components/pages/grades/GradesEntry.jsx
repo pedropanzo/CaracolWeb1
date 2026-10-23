@@ -5,7 +5,7 @@ import GradeFilters from "../../disciplines/DisciplineFilter"
 import StudentsWithoutGrades from "../../grades/StudentsWithoutGrades"
 import GradeFilterNotes from "../../grades/GradeEntryFilter"
 
-import PageBase from "../../layout/PageBase/PageBase"
+import PageBase from "../../Layout/PageBase/PageBase"
 
 export default function GradesPage() {
 

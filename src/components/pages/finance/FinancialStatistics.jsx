@@ -1,4 +1,4 @@
-import PageBase from '../../layout/PageBase/PageBase'
+import PageBase from '../../Layout/PageBase/PageBase'
 
 const monthlySummary = [
     { month: 'Mai', income: 2780000, expenses: 1360000 },

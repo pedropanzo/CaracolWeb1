@@ -4,7 +4,7 @@ import CourseFilter from "../../classes/CourseFilter"
 import ClassTable from "../../classes/ClassTable"
 //import ClassModal from "../../Classes/ClassModal"
 import TurmaModal from '../../turma/TurmaModal'
-import PageBase from "../../layout/PageBase/PageBase"
+import PageBase from "../../Layout/PageBase/PageBase"
 
 export default function Classes() {
     const [selectedCourse, setSelectedCourse] = useState("")

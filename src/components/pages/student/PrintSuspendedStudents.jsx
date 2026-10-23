@@ -3,7 +3,7 @@ import React from "react";
 import SuspendedHeader from "../../student/SuspendedHeader";
 import SuspendedTable from "../../student/SuspendedTable";
 import { useStudentStore } from "../../../stores/student.store";
-import PageBase from "../../layout/PageBase/PageBase"
+import PageBase from "../../Layout/PageBase/PageBase"
 
 const PrintSuspendedStudents = () => {
   const students = useStudentStore((state) => state.students)

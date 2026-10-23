@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
 import { useStudentStore } from "../../../stores/student.store"
-import PageBase from "../../layout/PageBase/PageBase"
+import PageBase from "../../Layout/PageBase/PageBase"
 
 export default function StudentsAcademico() {
     const students = useStudentStore((state) => state.students)
