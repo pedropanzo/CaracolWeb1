@@ -19,8 +19,8 @@ const Table = ({ students }) => {
             {students.map((s) => (
               <tr key={s.id}>
                 <td className="text-center">{s.id}</td>
-                <td>{s.nome}</td>
-                <td className="text-center">{s.motivo}</td>
+                <td>{s.name}</td>
+                <td className="text-center">{s.suspension?.reason}</td>
               </tr>
             ))}
           </tbody>

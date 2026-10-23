@@ -7,16 +7,18 @@ export default function AdvancedFilters({ onChange }) {
             <div className="col-md-3">
                 <select className="form-select" onChange={(e) => handleFilterChange('status', e.target.value)}>
                     <option value="">Status</option>
-                    <option value="Ativo">Ativo</option>
-                    <option value="Desactivo">Desactivo</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Suspenso">Suspenso</option>
+                    <option value="Desistente">Desistente</option>
                 </select>
             </div>
             <div className="col-md-3">
                 <select className="form-select" onChange={(e) => handleFilterChange('periodo', e.target.value)}>
                     <option value="">Período</option>
-                    <option value="manha">Manhã</option>
-                    <option value="tarde">Tarde</option>
-                    <option value="noite">Noite</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
                 </select>
             </div>
         </div>

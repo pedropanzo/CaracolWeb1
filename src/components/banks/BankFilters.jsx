@@ -1,31 +1,31 @@
-import { toPadding } from "chart.js/helpers";
-
-export default function BankFilters({ filter, setFilter}){
+export default function BankFilters({ filter, setFilter }){
     return (
         <div className="mb-3">
-            <div className="d-flex gap-3 row" style={{padding: "10px", width: "50%", margin: "0px auto"}}>
-                <div className="col-full">
-                    <p className="text-center">Modo de visulização</p>
+            <div className="row" style={{ padding: "10px", maxWidth: 500, margin: "0 auto" }}>
+                <div className="col-xs-12">
+                    <p className="text-center">Modo de visualização</p>
                 </div>
-                <div className="col-md-4">
+                <div className="col-xs-4">
                     <input 
                         type="radio"
                         name="filter"
+                        checked={filter === "Activo"}
                         onChange={() => setFilter("Activo")}
-                        defaultChecked
-                        /> Activos
+                    /> Ativos
                 </div>
-                <div className="col-md-4">
+                <div className="col-xs-4">
                     <input 
                         type="radio"
                         name="filter"
+                        checked={filter === "Bloqueado"}
                         onChange={() => setFilter("Bloqueado")}
-                        /> Bloqueado
+                    /> Bloqueados
                 </div>
-                <div className="col-md-4">
+                <div className="col-xs-4">
                     <input
                         type="radio"
                         name="filter"
+                        checked={filter === "Todos"}
                         onChange={() => setFilter("Todos")}
                     /> Todos
                 </div>

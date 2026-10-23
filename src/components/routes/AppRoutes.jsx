@@ -28,16 +28,13 @@ import Register from '../pages/auth/register';
 import Classes from '../pages/classes/Classes';
 import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
-import Grades from "../pages/grades/Grades";
 import Banks from "../pages/banks/Banks";
-import GradesEntry from "../pages/grades/GradesEntry";
 import NominalList from '../pages/reports/student/NominalList';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen";
 import AccumulatedValuesPage from "../pages/reports/accumulatedValues/AccumulatedValuesPage";
 import Payment from '../pages/payment/Payment';
-import StudentStatus from "../pages/student/StudentStatus";
 import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
 import PrintDropoutsStudent from '../pages/reports/student/PrintDropoutsStudent';
 import SuspendedStudentsPrint from "../pages/reports/student/SuspendedStudentsPrint";
@@ -47,9 +44,13 @@ import ClassHistoryReport from '../pages/reports/class/ClassHistoryReport';
 import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 import TurmasReportPage from "../pages/reports/TurmasReportPage";
 import ExcessoesPage from "../pages/reports/ExcessoesPage";
+import Expenses from "../pages/finance/Expenses";
+import FinancialStatistics from "../pages/finance/FinancialStatistics";
 
 import InscricaoAlunoModal from "../pages/students/InscricaoAlunoModal";
 import TransportPage from "../pages/transport/TransportPage";
+import StaffPage from "../pages/staff/StaffPage";
+import PedagogicalPage from "../pages/pedagogical/PedagogicalPage";
 
 export default function AppRoutes() {
 
@@ -94,15 +95,22 @@ export default function AppRoutes() {
 
           <Route path='/Banco' element={<Banks />} />
 
-          <Route path='/lancamento-notas' element={<Grades />} />
-          <Route path='/notas-implantadas' element={<GradesEntry />} />
+          <Route path='/lancamento-notas' element={<PedagogicalPage />} />
+          <Route path='/cumprimento-notas' element={<PedagogicalPage />} />
+          <Route path='/TransferredNotes' element={<PedagogicalPage />} />
+          <Route path='/notas-implantadas' element={<PedagogicalPage />} />
           <Route path='/Imp-lista-nominal-alunos' element={<NominalList />} />
 
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
+          <Route path="/administradores" element={<StaffPage />} />
+          <Route path="/professores" element={<StaffPage />} />
+          <Route path="/usuarios" element={<StaffPage />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
-          <Route path="/transicaodeclasse" element={<StudentStatus />} />
+          <Route path="/Despesas" element={<Expenses />} />
+          <Route path="/Estatisticas" element={<FinancialStatistics />} />
+          <Route path="/transicaodeclasse" element={<PedagogicalPage />} />
 
           <Route path="/transporte/rotas" element={<TransportPage />} />
           <Route path="/transporte/passageiros" element={<TransportPage />} />

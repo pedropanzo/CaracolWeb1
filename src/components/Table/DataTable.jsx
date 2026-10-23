@@ -25,16 +25,16 @@ export default function DataTable({
                         <tr key={student.id}>
                             <td>{student.name}</td>
                             <td>{student.registration}</td>
-                            <td>{student.class}</td>
+                            <td>{student.classe} — {student.turma}</td>
                             <td>
-                                <span className={`badge ${student.status === 'Ativo' ? 'bg-success' : 'bg-secondary'}`}>
-                                    {student.status}
+                                <span className={`badge ${student.estado === 'Activo' ? 'bg-success' : 'bg-secondary'}`}>
+                                    {student.estado}
                                 </span>
                             </td>
                             <td>
                                 <button className="btn btn-sm btn-primary me-2">Editar</button>
                                 <button className="btn btn-sm btn-info me-2">Ver</button>
-                                <button className="btn btn-sm btn-danger">desactivo</button>
+                                <button className="btn btn-sm btn-danger" disabled={student.estado !== "Activo"}>Suspender</button>
                             </td>
                         </tr>
                     ))}

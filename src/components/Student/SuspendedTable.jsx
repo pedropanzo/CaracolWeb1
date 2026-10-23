@@ -30,7 +30,7 @@ const SuspendedTable = ({ students }) => {
             <tr key={student.id}>
               <td>{student.id}</td>
               <td>{student.name}</td>
-              <td>{student.reason}</td>
+              <td>{student.suspension?.reason}</td>
             </tr>
           ))}
         </tbody>

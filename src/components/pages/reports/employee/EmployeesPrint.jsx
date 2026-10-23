@@ -1,13 +1,14 @@
 import { useState } from "react"
-import { employeesMock } from "./employeesMock"
+import { useStaffStore } from "../../../../stores/staff.store"
 import EmployeesHeader from "../../../reports/employee/EmployeesHeader"
 import EmployeesTable from "../../../reports/employee/EmployeesTable"
 import PageBase from "../../../layout/PageBase/PageBase"
 export default function EmployeesPrint() {
 
   const [filter, setFilter] = useState("ativos")
+  const employees = useStaffStore((state) => state.employees)
 
-  const filteredData = employeesMock.filter(emp => {
+  const filteredData = employees.filter(emp => {
     if (filter === "ativos") return emp.status === "ativo"
     if (filter === "desativados") return emp.status === "desativado"
     return true

@@ -1,14 +1,8 @@
-export default function ReportHeader(){
-
-return(
-
-<div className="d-flex gap-4 mb-3" style={{padding:"10px"}}>
-
-<button class="btn">RELATÓRIO</button>
-<button style={{paddingLeft: "10px"}} className="btn">2ª Via</button>
-
-</div>
-
-)
-
+export default function ReportHeader() {
+    return (
+        <div className="mb-3" style={{ padding: '10px 0' }}>
+            <button type="button" className="btn btn-primary" onClick={() => window.print()}>Imprimir relatório</button>{' '}
+            <button type="button" className="btn btn-default" onClick={() => window.print()}>Imprimir 2ª via</button>
+        </div>
+    )
 }

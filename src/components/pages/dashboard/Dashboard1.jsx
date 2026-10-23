@@ -1,8 +1,10 @@
 import { useAuth } from '../../../hooks/useAuth'
 import DashboardGrid from '../../dashboard/DashboardGrid'
+import { useStaffStore } from '../../../stores/staff.store'
 
 export default function Dashboard() {
   const { user, logout } = useAuth()
+  const employees = useStaffStore((state) => state.employees)
 
   return (
     <div className="container-fluid" >
@@ -43,7 +45,7 @@ export default function Dashboard() {
           <div className="card shadow-sm border-0">
             <div className="card-body">
               <h6 className="text-muted">Professores</h6>
-              <h3 className="fw-bold">25</h3>
+              <h3 className="fw-bold">{employees.filter((employee) => employee.categoria === 'Professor').length}</h3>
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@ export default function Dashboard() {
           <div className="card shadow-sm border-0">
             <div className="card-body">
               <h6 className="text-muted">Funcionários</h6>
-              <h3 className="fw-bold">12</h3>
+              <h3 className="fw-bold">{employees.length}</h3>
             </div>
           </div>
         </div>

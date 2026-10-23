@@ -2,17 +2,19 @@
 import React from "react";
 import SuspendedHeader from "../../student/SuspendedHeader";
 import SuspendedTable from "../../student/SuspendedTable";
-import { suspendedStudents } from "../../student/data/suspendedStudents";
+import { useStudentStore } from "../../../stores/student.store";
 import PageBase from "../../layout/PageBase/PageBase"
 
 const PrintSuspendedStudents = () => {
+  const students = useStudentStore((state) => state.students)
+    .filter((student) => student.estado === "Suspenso");
   return (
     <PageBase title="Impressao pedagogica">
       <div className="container-fluid py-4" style={{ background: "#f4f6fb" }}>
 
-        <SuspendedHeader total={suspendedStudents.length} />
+        <SuspendedHeader total={students.length} />
 
-        <SuspendedTable students={suspendedStudents} />
+        <SuspendedTable students={students} />
 
       </div>
     </PageBase>

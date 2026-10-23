@@ -1,26 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 import  DataTable  from '../../table/DataTable';
 import AdvancedFilters from '../../filters/AdvancedFilters';
+import PageBase from '../../layout/PageBase/PageBase';
+import { useStudentStore } from '../../../stores/student.store';
 {/*import ExportButtons from '../../export/ExportButtons';*/}
 
 export default function StudentsList() {
-    const [students, setStudents] = useState([]);
     const [search, setSearch] = useState("");
     const [filters, setFilters] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
+    const students = useStudentStore((state) => state.students);
 
-    useEffect(() => {
-        fetchStudents();
-    }, [search, filters, currentPage]);
-
-    function fetchStudents() {
-        //Aqui depois vai se conectar com a API, por enquanto só loga com os parâmetros
-        console.log("Buscar dados com:", search, filters, currentPage);
-    }
+    const filteredStudents = useMemo(() => students.filter((student) => (
+        `${student.name} ${student.registration} ${student.turma}`.toLowerCase().includes(search.toLowerCase())
+        && (!filters.status || student.estado === filters.status)
+        && (!filters.periodo || student.periodo.toLowerCase() === filters.periodo.toLowerCase())
+    )), [students, search, filters]);
     return (
+        <PageBase title="Inscrições de alunos">
         <div className="card shadow-sm">
             <div className="card-body"> 
-                {/* A busca será feita aqui */}
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <input 
                         type="text"
@@ -34,8 +33,13 @@ export default function StudentsList() {
                 {/* Filtros avançados */}
                 <AdvancedFilters onChange={setFilters} />
                 {/* Tabela de dados */}
-                <DataTable data={students} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                <DataTable
+                    data={filteredStudents}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                />
             </div>
         </div>
+        </PageBase>
     );
 }

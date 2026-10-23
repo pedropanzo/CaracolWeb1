@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useStudentStore } from "../../../stores/student.store";
+import { courses, classes, turmas } from "../../../data/students";
 
 // ─── Icones ────────────────────────────────────────────────────────────────────
 import iconSmall from "./../../../assets/img/svg/inscription/Classroom.svg";
@@ -10,21 +12,19 @@ const provincias = [
   "Lunda Sul", "Malanje", "Moxico", "Namibe", "Uíge", "Zaire"
 ];
 
-const cursosData = [
-  { id: "", nome: "Sem Opção" },
-  { id: "inf", nome: "Informática" },
-  { id: "gest", nome: "Gestão" },
-  { id: "cont", nome: "Contabilidade" },
-];
-
-const classesData = ["1ª Classe", "2ª Classe", "3ª Classe", "4ª Classe", "5ª Classe", "6ª Classe"];
-
-const turmasData = [
-  { id: "1MA", label: "1M/A", periodo: "Manhã", capacidade: 45, matriculados: 30 },
-  { id: "1MT", label: "1M/T", periodo: "Tarde", capacidade: 40, matriculados: 22 },
-  { id: "2MA", label: "2M/A", periodo: "Manhã", capacidade: 45, matriculados: 38 },
-  { id: "2MT", label: "2M/T", periodo: "Tarde", capacidade: 40, matriculados: 15 },
-];
+const cursosData = courses.map((course) => ({ id: String(course.id), nome: course.name }));
+const classesData = classes.map((studentClass) => studentClass.name);
+const turmasData = turmas.map((turma) => ({
+  id: String(turma.id),
+  label: turma.name,
+  periodo: turma.periodo,
+  capacidade: turma.capacidade,
+}));
+const municipiosData = {
+  Luanda: ["Cazenga", "Cacuaco", "Viana", "Kilamba Kiaxi", "Belas"],
+  Benguela: ["Benguela", "Lobito", "Catumbela"],
+  Huambo: ["Huambo", "Caála", "Bailundo"],
+};
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const styles = `  
@@ -361,6 +361,9 @@ function StepDadosPessoal({ data, onChange, onNext }) {
           <div className="insc-select-wrap">
             <select className="insc-select insc-select-blue" value={data.municipio} onChange={set("municipio")}>
               <option value="">Selecionar</option>
+              {(municipiosData[data.provincia] || []).map((municipio) => (
+                <option key={municipio} value={municipio}>{municipio}</option>
+              ))}
             </select>
           </div>
         </div>
@@ -563,7 +566,7 @@ function InscricaoAlunoModal({ isOpen, onClose, onFinalSubmit }) {
   });
 
   const [academico, setAcademico] = useState({
-    curso: "", classe: "1ª Classe", turma: "1MA",
+    curso: "1", classe: "1ª Classe", turma: "1",
   });
 
   const handleClose = () => {
@@ -631,8 +634,8 @@ function InscricaoAlunoModal({ isOpen, onClose, onFinalSubmit }) {
 // ─── Exemplo de uso com botão ──────────────────────────────────────────
 export default function App() {
 
-  // ─── Mudei o status para abrir o modal ao caregar o formulário
   const [modalAberto, setModalAberto] = useState(true);
+  const addStudent = useStudentStore((state) => state.addStudent);
 
   return (
     <>
@@ -654,8 +657,34 @@ export default function App() {
         isOpen={modalAberto}
         onClose={() => setModalAberto(false)}
         onFinalSubmit={(dados) => {
-          console.log("Dados da matrícula:", dados);
-          // Aqui você processa os dados como quiser
+          const course = cursosData.find((item) => item.id === dados.curso);
+          const className = classesData.includes(dados.classe) ? dados.classe : "1ª Classe";
+          const turma = turmasData.find((item) => item.id === dados.turma);
+          addStudent({
+            name: dados.nomeAluno,
+            sexo: dados.genero === "M" ? "Masculino" : "Feminino",
+            bi: dados.docNumero || "Não informado",
+            father: dados.filhoDe,
+            mother: dados.eDe,
+            provincia: dados.provincia,
+            municipio: dados.municipio,
+            residencia: dados.residencia,
+            contacto: dados.contacto,
+            nascimento: dados.dataNascimento
+              ? new Date(`${dados.dataNascimento}T00:00:00`).toLocaleDateString("pt-PT")
+              : "",
+            encarregado: dados.encarregado,
+            registration: dados.processo || `INS-${Date.now()}`,
+            curso: course?.nome ?? "Sem Opção",
+            classe: className,
+            turma: turma?.label ?? "A",
+            sala: 1,
+            periodo: turma?.periodo ?? "Manhã",
+            dataInscricao: new Date().toLocaleDateString("pt-PT"),
+            anoLectivo: "2025/2026",
+            estado: "Pendente",
+            history: [],
+          });
         }}
       />
     </>

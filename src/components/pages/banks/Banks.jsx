@@ -11,37 +11,48 @@ export default function Banks() {
     const [data, setData] = useState(banksMock)
     const [showModal, setShowModal] = useState(false)
     const [filter, setFilter] = useState("Activo")
+    const [editingBank, setEditingBank] = useState(null)
 
     const filteredData =
         filter === "Todos"
             ? data
             : data.filter(b => b.estado === filter)
 
-    const addBank = (bank) => {
-        setData([...data, bank])
+    const saveBank = (bank) => {
+        setData((current) => editingBank
+            ? current.map((item) => item.id === bank.id ? bank : item)
+            : [...current, bank])
+        setEditingBank(null)
+    }
+    const editBank = (bank) => {
+        setEditingBank(bank)
+        setShowModal(true)
+    }
+    const toggleStatus = (bank) => {
+        setData((current) => current.map((item) => item.id === bank.id
+            ? { ...item, estado: item.estado === 'Activo' ? 'Bloqueado' : 'Activo' }
+            : item))
     }
     return (
         <PageBase title="Bancos">
             <div className='container mt-4'>
-
-                {/* FILTROS */}
+                <div className="clearfix" style={{ marginBottom: 15 }}>
+                    <button
+                        type="button"
+                        className='btn btn-primary pull-right'
+                        onClick={() => { setEditingBank(null); setShowModal(true); }}
+                    >
+                        + Novo Banco
+                    </button>
+                </div>
                 <BankFilters filter={filter} setFilter={setFilter} />
-
-                <button
-                    className='btn btn-primary'
-                    onClick={() => setShowModal(true)}
-                >
-                    + Novo Banco
-                </button>
-
-                {/**TABELA */}
-                <BankTable data={filteredData} />
-
-                {/** MODAL */}
+                <BankTable data={filteredData} onEdit={editBank} onToggleStatus={toggleStatus} />
                 <BankModal
+                    key={`${showModal}-${editingBank?.id ?? 'new'}`}
                     show={showModal}
-                    onClose={() => setShowModal(false)}
-                    onSave={addBank}
+                    bank={editingBank}
+                    onClose={() => { setShowModal(false); setEditingBank(null); }}
+                    onSave={saveBank}
                 />
             </div>
         </PageBase>
