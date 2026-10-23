@@ -11,7 +11,7 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import Message from '../pages/message/Message';
 import StudentList from '../pages/students/StudentsList';
 import StudentsAcademico from '../pages/students/StudentsAcademico';
-import StudentConfirm from '../pages/students/StudentConfirm';
+//import StudentConfirm from '../pages/students/StudentConfirm';
 import SuspensionPage from '../pages/students/SuspensionPage';
 import StudentPage from '../pages/students/StudentPage';
 import StudentDropOut from '../pages/students/StudentDropOut';
@@ -67,7 +67,7 @@ export default function AppRoutes() {
 
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<InscricaoAlunoModal />} />
-          <Route path="/alunos/confirmacao" element={<StudentConfirm />} />
+          {/* <Route path="/alunos/confirmacao" element={<StudentConfirm />} /> */}
           <Route path="/alunos/index" element={<StudentsAcademico />} />
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
