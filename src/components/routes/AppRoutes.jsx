@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
-import AppLayout from '../Layout/AppLayout'
+import AppLayout from '../layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
-import AuthLayout from '../Layout/AuthLayout';
+import AuthLayout from '../layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
@@ -59,12 +59,10 @@ export default function AppRoutes() {
         <Route path="/register" element={<Register />} />
       </Route>
 
-
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard/dashboard1" element={<Dashboard1 />} />
-          <Route path="/dashboard/dashboard2" element={<Dashboard2 />} />
+          <Route path="/dashboard/dashboard1" element={<Dashboard1 />} />          
 
           <Route path="/message/Message" element={<Message />} />
 
