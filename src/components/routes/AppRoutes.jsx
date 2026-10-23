@@ -5,17 +5,13 @@ import AuthLayout from '../Layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
-//import Dashboard1 from '../pages/dashboard/Dashboard1';
-//import Dashboard2 from '../pages/dashboard/Dashboard2';
 
 import Message from '../pages/message/Message';
 import StudentList from '../pages/students/StudentsList';
 import StudentsAcademico from '../pages/students/StudentsAcademico';
-//import StudentConfirm from '../pages/students/StudentConfirm';
 import SuspensionPage from '../pages/students/SuspensionPage';
 import StudentPage from '../pages/students/StudentPage';
 import StudentDropOut from '../pages/students/StudentDropOut';
-import Dopouts from '../pages/reports/student/PrintDropoutsStudent';
 import SchoolForm from '../pages/school/SchoolForm';
 import SchoolList from '../pages/school/SchoolList';
 import AcademicYearPage from '../pages/academicYear/AcademicYear';
@@ -35,10 +31,7 @@ import AccumulatedValuesPage from "../pages/reports/accumulatedValues/Accumulate
 import Payment from '../pages/payment/Payment';
 import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
 import PrintDropoutsStudent from '../pages/reports/student/PrintDropoutsStudent';
-import SuspendedStudentsPrint from "../pages/reports/student/SuspendedStudentsPrint";
 import TeachersReport from '../pages/reports/TeachersReport';
-import EmployeesPrint from '../pages/reports/employee/EmployeesPrint';
-import ClassHistoryReport from '../pages/reports/class/ClassHistoryReport';
 import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 import TurmasReportPage from "../pages/reports/TurmasReportPage";
 import ExcessoesPage from "../pages/reports/ExcessoesPage";
@@ -67,7 +60,6 @@ export default function AppRoutes() {
 
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<InscricaoAlunoModal />} />
-          {/* <Route path="/alunos/confirmacao" element={<StudentConfirm />} /> */}
           <Route path="/alunos/index" element={<StudentsAcademico />} />
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
