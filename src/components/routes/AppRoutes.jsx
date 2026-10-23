@@ -5,8 +5,8 @@ import AuthLayout from '../Layout/AuthLayout';
 import Login from '../pages/auth/Login';
 
 import Dashboard from '../pages/dashboard/Dashboard';
-import Dashboard1 from '../pages/dashboard/Dashboard1';
-import Dashboard2 from '../pages/dashboard/Dashboard2';
+//import Dashboard1 from '../pages/dashboard/Dashboard1';
+//import Dashboard2 from '../pages/dashboard/Dashboard2';
 
 import Message from '../pages/message/Message';
 import StudentList from '../pages/students/StudentsList';
@@ -61,8 +61,7 @@ export default function AppRoutes() {
 
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard/dashboard1" element={<Dashboard1 />} />          
+          <Route path="/" element={<Dashboard />} />          
 
           <Route path="/message/Message" element={<Message />} />
 
