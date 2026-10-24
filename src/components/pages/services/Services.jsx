@@ -4,7 +4,7 @@ import { mockServices, mockReferences } from "./mockServices";
 import ServiceTable from "./ServiceTable";
 import ReferenceForm from "./ReferenceForm";
 import ReferenceTable from "./ReferenceTable";
-import PageBase from "@/layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 
 export default function Services() {
     const [services, setServices] = useState(mockServices);

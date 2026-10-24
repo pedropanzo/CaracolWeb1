@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useStaffStore } from "../../../../stores/staff.store"
 import EmployeesHeader from "../../../reports/employee/EmployeesHeader"
 import EmployeesTable from "../../../reports/employee/EmployeesTable"
-import PageBase from "../@/layout/PageBase/PageBase"
+import PageBase from "../../../layout/PageBase/PageBase"
 export default function EmployeesPrint() {
 
   const [filter, setFilter] = useState("ativos")

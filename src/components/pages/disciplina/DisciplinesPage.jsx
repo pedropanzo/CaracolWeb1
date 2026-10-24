@@ -1,7 +1,7 @@
 import DisciplineFilter from "../../disciplines/DisciplineFilter"
 import DisciplineInfo from "../../disciplines/DisciplineInfo"
 import DisciplineTable from "../../disciplines/DisciplineTable"
-import PageBase from "@/layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 export default function DisciplinesPage() {
 

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import DataTable from '../../Table/DataTable';
 import AdvancedFilters from '../../filters/AdvancedFilters';
-import PageBase from '@/layout/PageBase/PageBase';
+import PageBase from '../../layout/PageBase/PageBase';
 import { useStudentStore } from '../../../stores/student.store';
 {/*import ExportButtons from '../../export/ExportButtons';*/}
 

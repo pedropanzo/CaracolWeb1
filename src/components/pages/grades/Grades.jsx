@@ -6,7 +6,7 @@ import StudentsWithoutGrades from "../../grades/StudentsWithoutGrades"
 import StudentsWithGrades from "../../grades/StudentsWithGrades"
 import GradeForm from "../../grades/GradeForm"
 
-import PageBase from "@/layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 export default function GradesPage() {
 

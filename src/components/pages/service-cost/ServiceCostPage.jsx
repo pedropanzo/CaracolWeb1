@@ -1,4 +1,4 @@
-import PageBase from "@/layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 import CostFilter from "../../service-cost/CostFilter";
 import CostTable from "../../service-cost/CostTable";
 

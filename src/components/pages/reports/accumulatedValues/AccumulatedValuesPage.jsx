@@ -2,7 +2,7 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import ReportHeader from "./ReportHeader";
 import ValuesTable from "./ValuesTable";
-import PageBase from "../@/layout/PageBase/PageBase"
+import PageBase from "../../../layout/PageBase/PageBase"
 
 export default function AccumulatedValuesPage() {
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import PageBase from "@/layout/PageBase/PageBase";
+import PageBase from "../../layout/PageBase/PageBase";
 import SuspensionHeader from "../../suspensao/SuspensionHeader";
 import SuspensionTable from "../../suspensao/SuspensionTable";
 import SuspensionForm from "../../suspensao/SuspensionForm";
