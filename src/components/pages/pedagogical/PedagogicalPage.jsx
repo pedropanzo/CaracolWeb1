@@ -9,7 +9,7 @@ import {
   Search,
   X,
 } from "lucide-react";
-import PageBase from "../../layout/PageBase/PageBase";
+import PageBase from "../../Layout/PageBase/PageBase";
 import { usePedagogicalStore } from "../../../stores/pedagogical.store";
 import "./pedagogical.css";
 

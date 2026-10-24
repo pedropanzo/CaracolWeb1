@@ -5,7 +5,7 @@ import BankTable from '../../banks/BankTable';
 import BankModal from '../../banks/BankModal';
 import BankFilters from '../../banks/BankFilters';
 
-import PageBase from '../../layout/PageBase/PageBase'
+import PageBase from '../../Layout/PageBase/PageBase'
 
 
 export default function Banks() {

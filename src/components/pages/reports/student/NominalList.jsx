@@ -4,7 +4,7 @@ import NominalFilters from "../../../reports/NominalFilters"
 import NominalTable from "../../../reports/NominalTable"
 import PrintOptions from "../../../reports/PrintOptions"
 
-import PageBase from "../../../layout/PageBase/PageBase"
+import PageBase from "../../../Layout/PageBase/PageBase"
 
 export default function NominalList() {
 
