@@ -4,7 +4,7 @@ import AcademicHistory from "../../Student/AcademicHistory"
 import StudentConfirmForm from "../../Student/StudentConfirmForm"
 import { courses, classes, turmas } from "../../../data/students"
 import { useStudentStore } from "../../../stores/student.store"
-import PageBase from "../../layout/PageBase/PageBase"
+import PageBase from "../../Layout/PageBase/PageBase"
 
 export default function StudentConfirm() {
     const students = useStudentStore((state) => state.students)
