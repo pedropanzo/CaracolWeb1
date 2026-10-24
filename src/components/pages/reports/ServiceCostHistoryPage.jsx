@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../reports/Header";
 import Filters from "../../reports/Filters";
 import Table from "../../reports/Table";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "@/layout/PageBase/PageBase";
 const ServiceCostHistoryPage = () => {
   const [inicio, setInicio] = useState("");
   const [fim, setFim] = useState("");

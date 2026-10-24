@@ -3,7 +3,7 @@ import { dropoutsMock } from "./dropoutsMock"
 import DropoutTable from "../../../Student/dropouts/DropoutTable"
 import NominalFilters from '../../../reports/NominalFilters'
 import DropoutTable2 from '../../../Student/dropouts/DropoutTable'
-import PageBase from "../../../Layout/PageBase/PageBase"
+import PageBase from "../@/layout/PageBase/PageBase"
 
 export default function PrintDropoutsStudent() {
 

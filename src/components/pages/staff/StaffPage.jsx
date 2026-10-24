@@ -11,7 +11,7 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "@/layout/PageBase/PageBase";
 import { useStaffStore } from "../../../stores/staff.store";
 import "./staff.css";
 

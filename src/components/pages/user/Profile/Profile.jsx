@@ -1,4 +1,4 @@
-import PageBase from "../../../Layout/PageBase/PageBase";
+import PageBase from "../@/layout/PageBase/PageBase";
 import ProfileForm from "./ProfileForm";
 import ProfilePhoto from "./ProfilePhoto";
 

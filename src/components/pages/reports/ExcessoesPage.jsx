@@ -2,7 +2,7 @@ import React from "react";
 import HeaderExcessoes from "../../reports/excessoes/HeaderExcessoes";
 import ExcessoesTable from "../../reports/excessoes/ExcessoesTable";
 import ServicosTable from "../../reports/excessoes/ServicosTable";
-import PageBase from "../../Layout/PageBase/PageBase";
+import PageBase from "@/layout/PageBase/PageBase";
 
 const ExcessoesPagamentoPage = () => {
   return (

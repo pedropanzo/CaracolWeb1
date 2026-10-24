@@ -3,7 +3,7 @@ import Header from "../../../reports/suspendedStudents/Header";
 import Summary from "../../../reports/suspendedStudents/Summary";
 import Actions from "../../../reports/suspendedStudents/Actions";
 import Table from "../../../reports/suspendedStudents/Table";
-import PageBase from "../../../Layout/PageBase/PageBase";
+import PageBase from "../@/layout/PageBase/PageBase";
 import { useStudentStore } from "../../../../stores/student.store";
 
 const SuspendedStudentsPrint = () => {

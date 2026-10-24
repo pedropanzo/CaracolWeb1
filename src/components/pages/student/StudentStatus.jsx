@@ -1,5 +1,5 @@
 import React from "react";
-import PageBase from "../../Layout/PageBase/PageBase"
+import PageBase from "@/layout/PageBase/PageBase"
 
 const StudentStatus = () => {
   const students = [
