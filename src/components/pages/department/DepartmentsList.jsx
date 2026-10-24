@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DepartmentForm from './DepartmentForm';
 import { mockDepartments } from './mockDepartments';
-import PageBase from '../../layout/PageBase/PageBase';
+import PageBase from '../../Layout/PageBase/PageBase';
 
 export default function DepartmentsList() {
     const [departments, setDepartments] = useState(mockDepartments);

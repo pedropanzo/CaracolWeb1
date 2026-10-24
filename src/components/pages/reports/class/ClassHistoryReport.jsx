@@ -4,7 +4,7 @@ import { classHistoryMock } from "./classHistoryMock"
 
 import ClassHistoryHeader from "../../../reports/class/ClassHistoryHeader"
 import ClassHistoryTable from "../../../reports/class/ClassHistoryTable"
-import PageBase from "../../../layout/PageBase/PageBase"
+import PageBase from "../../../Layout/PageBase/PageBase"
 
 export default function ClassHistoryReport() {
 

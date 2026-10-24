@@ -2,7 +2,7 @@ import { useState } from 'react';
 import AcademicYearTable from '../../academicYear/AcademicYearTable';
 import AcademicYearFormModal from '../../academicYear/AcademicYearFormModal';
 import AcademicYearViewModal from '../../academicYear/AcademicYearViewModal';
-import PageBase from '../../layout/PageBase/PageBase';
+import PageBase from '../../Layout/PageBase/PageBase';
 
 export default function AcademicYearPage() {
     const [years, setYears] = useState([
