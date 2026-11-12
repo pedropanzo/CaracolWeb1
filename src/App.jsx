@@ -12,7 +12,6 @@ import './assets/js/plugins/metisMenu/jquery.metisMenu.js'
 import './assets/js/plugins/slimscroll/jquery.slimscroll.min.js'
 
 //Custom
-import './assets/js/inspinia.js'
 import './assets/js/plugins/pace/pace.min.js'
 
 import { PrintPanelProvider } from './context/PrintPanelContext';

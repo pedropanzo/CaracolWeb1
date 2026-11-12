@@ -5,21 +5,60 @@
  *
  */
 
-$(document).ready(function () {
+/* global $ */
 
+export function initializeInspinia() {
 
     // Add body-small class if window less than 768px
-    if ($(this).width() < 769) {
+    if ($(window).width() < 769) {
         $('body').addClass('body-small')
     } else {
         $('body').removeClass('body-small')
+    }
+
+    if (localStorageSupport()) {
+        var collapse = localStorage.getItem("collapse_menu");
+        var fixedsidebar = localStorage.getItem("fixedsidebar");
+        var fixednavbar = localStorage.getItem("fixednavbar");
+        var boxedlayout = localStorage.getItem("boxedlayout");
+        var fixedfooter = localStorage.getItem("fixedfooter");
+
+        var body = $('body');
+
+        if (fixedsidebar == 'on') {
+            body.addClass('fixed-sidebar');
+        }
+
+        if (collapse == 'on' && !body.hasClass('body-small')) {
+            body.addClass('mini-navbar');
+        }
+
+        if (fixednavbar == 'on') {
+            $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+            body.addClass('fixed-nav');
+        }
+
+        if (boxedlayout == 'on') {
+            body.addClass('boxed-layout');
+        }
+
+        if (fixedfooter == 'on') {
+            $(".footer").addClass('fixed');
+        }
+
+        if (fixedsidebar == 'on') {
+            $('.sidebar-collapse').slimScroll({
+                height: '100%',
+                railOpacity: 0.9
+            });
+        }
     }
 
     // MetisMenu
     $('#side-menu').metisMenu();
 
     // Collapse ibox function
-    $('.collapse-link').on('click', function () {
+    $(document).off('click.inspinia', '.collapse-link').on('click.inspinia', '.collapse-link', function () {
         var ibox = $(this).closest('div.ibox');
         var button = $(this).find('i');
         var content = ibox.children('.ibox-content');
@@ -33,13 +72,13 @@ $(document).ready(function () {
     });
 
     // Close ibox function
-    $('.close-link').on('click', function () {
+    $(document).off('click.inspinia', '.close-link').on('click.inspinia', '.close-link', function () {
         var content = $(this).closest('div.ibox');
         content.remove();
     });
 
     // Fullscreen ibox function
-    $('.fullscreen-link').on('click', function () {
+    $(document).off('click.inspinia', '.fullscreen-link').on('click.inspinia', '.fullscreen-link', function () {
         var ibox = $(this).closest('div.ibox');
         var button = $(this).find('i');
         $('body').toggleClass('fullscreen-ibox-mode');
@@ -51,7 +90,7 @@ $(document).ready(function () {
     });
 
     // Close menu in canvas mode
-    $('.close-canvas-menu').on('click', function () {
+    $(document).off('click.inspinia', '.close-canvas-menu').on('click.inspinia', '.close-canvas-menu', function () {
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
     });
@@ -63,7 +102,7 @@ $(document).ready(function () {
     });
 
     // Open close right sidebar
-    $('.right-sidebar-toggle').on('click', function () {
+    $(document).off('click.inspinia', '.right-sidebar-toggle').on('click.inspinia', '.right-sidebar-toggle', function () {
         $('#right-sidebar').toggleClass('sidebar-open');
     });
 
@@ -75,7 +114,7 @@ $(document).ready(function () {
     });
 
     // Open close small chat
-    $('.open-small-chat').on('click', function () {
+    $(document).off('click.inspinia', '.open-small-chat').on('click.inspinia', '.open-small-chat', function () {
         $(this).children().toggleClass('fa-comments').toggleClass('fa-remove');
         $('.small-chat-box').toggleClass('active');
     });
@@ -87,7 +126,7 @@ $(document).ready(function () {
     });
 
     // Small todo handler
-    $('.check-link').on('click', function () {
+    $(document).off('click.inspinia', '.check-link').on('click.inspinia', '.check-link', function () {
         var button = $(this).find('i');
         var label = $(this).next('span');
         button.toggleClass('fa-check-square').toggleClass('fa-square-o');
@@ -103,7 +142,7 @@ $(document).ready(function () {
     });
 
     // Minimalize menu
-    $('.navbar-minimalize').on('click', function () {
+    $(document).off('click.inspinia', '.navbar-minimalize').on('click.inspinia', '.navbar-minimalize', function () {
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
 
@@ -176,66 +215,15 @@ $(document).ready(function () {
     $('.full-height-scroll').slimscroll({
         height: '100%'
     })
-});
-
-
-// Minimalize menu when screen is less than 768px
-$(window).bind("resize", function () {
-    if ($(this).width() < 769) {
-        $('body').addClass('body-small')
-    } else {
-        $('body').removeClass('body-small')
-    }
-});
-
-// Local Storage functions
-// Set proper body class and plugins based on user configuration
-$(document).ready(function () {
-    if (localStorageSupport()) {
-
-        var collapse = localStorage.getItem("collapse_menu");
-        var fixedsidebar = localStorage.getItem("fixedsidebar");
-        var fixednavbar = localStorage.getItem("fixednavbar");
-        var boxedlayout = localStorage.getItem("boxedlayout");
-        var fixedfooter = localStorage.getItem("fixedfooter");
-
-        var body = $('body');
-
-        if (fixedsidebar == 'on') {
-            body.addClass('fixed-sidebar');
-            $('.sidebar-collapse').slimScroll({
-                height: '100%',
-                railOpacity: 0.9
-            });
+    // Minimalize menu when screen is less than 768px
+    $(window).off("resize.inspinia").on("resize.inspinia", function () {
+        if ($(this).width() < 769) {
+            $('body').addClass('body-small')
+        } else {
+            $('body').removeClass('body-small')
         }
-
-        if (collapse == 'on') {
-            if (body.hasClass('fixed-sidebar')) {
-                if (!body.hasClass('body-small')) {
-                    body.addClass('mini-navbar');
-                }
-            } else {
-                if (!body.hasClass('body-small')) {
-                    body.addClass('mini-navbar');
-                }
-
-            }
-        }
-
-        if (fixednavbar == 'on') {
-            $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
-            body.addClass('fixed-nav');
-        }
-
-        if (boxedlayout == 'on') {
-            body.addClass('boxed-layout');
-        }
-
-        if (fixedfooter == 'on') {
-            $(".footer").addClass('fixed');
-        }
-    }
-});
+    });
+}
 
 // check if browser support HTML5 local storage
 function localStorageSupport() {
@@ -293,5 +281,3 @@ function WinMove() {
         })
         .disableSelection();
 }
-
-
