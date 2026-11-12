@@ -111,7 +111,7 @@ const Sidebar = () => {
                 { name: "Departamento", path: "/departamentos" },
                 { name: "Serviços", path: "/servicos" },
                 { name: "Custo de serviços", path: "/custo-servico" },
-                { name: "Configurações", path: "/escolas" },
+                { name: "Configurações", path: "/configuracoes" },
             ],
         },
 
